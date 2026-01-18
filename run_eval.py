@@ -24,6 +24,7 @@ import gymnasium as gym
 import torch
 import cv2
 import mediapy
+import numpy as np
 from datetime import datetime
 from pathlib import Path
 from tqdm import tqdm
@@ -66,6 +67,56 @@ def _torch_cuda_arch_preflight() -> None:
         raise RuntimeError(str(e)) from e
 
 
+def _format_vlm_debug(vlm: dict) -> str:
+    """Format the VLM debug payload returned by openpi into a single, readable line."""
+    if not isinstance(vlm, dict):
+        return f"VLM_DEBUG (unexpected type): {type(vlm)}"
+    if "error" in vlm:
+        return f"VLM_DEBUG error: {vlm.get('error')}"
+
+    parts: list[str] = []
+    parts.append(f"pi05={vlm.get('pi05', None)}")
+    if "prefix_tokens" in vlm:
+        parts.append(f"prefix_tokens={vlm['prefix_tokens']}")
+    if "prompt_tokens" in vlm:
+        parts.append(f"prompt_tokens={vlm['prompt_tokens']}")
+
+    def _vec_summary(name: str, obj: dict | None) -> None:
+        if not isinstance(obj, dict):
+            return
+        norm = obj.get("norm", None)
+        head = obj.get("head", None)
+        if isinstance(norm, (int, float)):
+            parts.append(f"{name}_norm={norm:.3f}")
+        if head is not None:
+            head_arr = np.asarray(head)
+            # Keep it compact even if head_dim is large.
+            parts.append(
+                f"{name}_head={np.array2string(head_arr, precision=3, floatmode='fixed', separator=',', max_line_width=120)}"
+            )
+
+    _vec_summary("prefix", vlm.get("prefix"))
+    if "prompt" in vlm:
+        _vec_summary("prompt", vlm.get("prompt"))
+
+    images = vlm.get("images")
+    if isinstance(images, dict):
+        img_parts: list[str] = []
+        for k, v in images.items():
+            if not isinstance(v, dict):
+                continue
+            norm = v.get("norm", None)
+            mask = v.get("mask", None)
+            if isinstance(norm, (int, float)) and isinstance(mask, bool):
+                img_parts.append(f"{k}(mask={mask},norm={norm:.3f})")
+            elif isinstance(norm, (int, float)):
+                img_parts.append(f"{k}(norm={norm:.3f})")
+        if img_parts:
+            parts.append("images=" + " ".join(img_parts))
+
+    return "VLM_DEBUG " + " ".join(parts)
+
+
 def main(
         episodes:int = 10,
         headless: bool = True,
@@ -75,6 +126,9 @@ def main(
         remote_host: str = "localhost",
         remote_port: int = 8000,
         open_loop_horizon: int = 8,
+        print_vlm: bool = False,
+        vlm_head_dim: int = 16,
+        vlm_full: bool = False,
         # Optional: replace an object prim inside the selected USD scene.
         object_usd: str | None = None,
         object_prim: str | None = None,
@@ -187,6 +241,9 @@ def main(
             remote_host=remote_host,
             remote_port=remote_port,
             open_loop_horizon=open_loop_horizon,
+            debug_vlm=print_vlm,
+            vlm_head_dim=vlm_head_dim,
+            vlm_full=vlm_full,
         )
     elif client == "jointvel":
         # dt in this env is ~15Hz (see droid_environment EnvCfg); keep it explicit here.
@@ -195,6 +252,9 @@ def main(
             remote_port=remote_port,
             open_loop_horizon=open_loop_horizon,
             dt=1.0 / 15.0,
+            debug_vlm=print_vlm,
+            vlm_head_dim=vlm_head_dim,
+            vlm_full=vlm_full,
         )
     else:
         raise ValueError("--client must be one of: jointpos, jointvel")
@@ -207,8 +267,10 @@ def main(
     max_steps = env.env.max_episode_length
     with torch.no_grad():
         for ep in range(episodes):
-            for _ in tqdm(range(max_steps), desc=f"Episode {ep+1}/{episodes}"):
+            for step in tqdm(range(max_steps), desc=f"Episode {ep+1}/{episodes}"):
                 ret = client.infer(obs, instruction)
+                if print_vlm and ret.get("vlm") is not None:
+                    tqdm.write(f"[ep={ep} step={step}] {_format_vlm_debug(ret['vlm'])}")
                 if not headless:
                     cv2.imshow("Right Camera", cv2.cvtColor(ret["viz"], cv2.COLOR_RGB2BGR))
                     cv2.waitKey(1)

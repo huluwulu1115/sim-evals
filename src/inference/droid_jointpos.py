@@ -10,8 +10,15 @@ class Client(InferenceClient):
                 remote_host:str = "localhost", 
                 remote_port:int = 8000,
                 open_loop_horizon:int = 8,
+                *,
+                debug_vlm: bool = False,
+                vlm_head_dim: int = 16,
+                vlm_full: bool = False,
                  ) -> None:
         self.open_loop_horizon = open_loop_horizon
+        self.debug_vlm = bool(debug_vlm)
+        self.vlm_head_dim = int(vlm_head_dim)
+        self.vlm_full = bool(vlm_full)
         self.client = websocket_client_policy.WebsocketClientPolicy(
             remote_host, remote_port
         )
@@ -38,6 +45,7 @@ class Client(InferenceClient):
         Infer the next action from the policy in a server-client setup
         """
         curr_obs = self._extract_observation(obs)
+        vlm = None
         if (
             self.actions_from_chunk_completed == 0
             or self.actions_from_chunk_completed >= self.open_loop_horizon
@@ -54,7 +62,16 @@ class Client(InferenceClient):
                 "observation/gripper_position": curr_obs["gripper_position"],
                 "prompt": instruction,
             }
-            self.pred_action_chunk = self.client.infer(request_data)["actions"]
+            if self.debug_vlm:
+                request_data["__openpi_debug__"] = {
+                    "vlm": True,
+                    "vlm_head_dim": self.vlm_head_dim,
+                    "vlm_full": self.vlm_full,
+                }
+
+            resp = self.client.infer(request_data)
+            self.pred_action_chunk = resp["actions"]
+            vlm = resp.get("vlm")
 
         action = self.pred_action_chunk[self.actions_from_chunk_completed]
         self.actions_from_chunk_completed += 1
@@ -69,7 +86,7 @@ class Client(InferenceClient):
         img2 = image_tools.resize_with_pad(curr_obs["wrist_image"], 224, 224)
         both = np.concatenate([img1, img2], axis=1)
 
-        return {"action": action, "viz": both}
+        return {"action": action, "viz": both, "vlm": vlm}
 
     def _extract_observation(self, obs_dict, *, save_to_disk=False):
         # Assign images
