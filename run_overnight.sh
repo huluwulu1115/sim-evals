@@ -14,20 +14,9 @@ run_eval() {
     echo ""
 }
 
-
-run_eval --object microwave/7236_ivw --task tool_use --episodes 5
-run_eval --object microwave/7236_vlm1shot --task tool_use --episodes 5
-
-
-run_eval --object laptop/9912_evogen --task tool_use --episodes 5
-run_eval --object laptop/9912_humangensim2 --task tool_use --episodes 5
-run_eval --object laptop/9912_ivw --task tool_use --episodes 5
-run_eval --object laptop/9912_vlm1shot --task tool_use --episodes 5
-
-# run_eval --object cabinet/7236_evogen --task tool_use --episodes 5
-# run_eval --object cabinet/7236_humangensim2 --task tool_use --episodes 5
-# run_eval --object cabinet/7236_ivw --task tool_use --episodes 5
-# run_eval --object cabinet/7236_vlm1shot --task tool_use --episodes 5
+run_eval --object cabinet/19179_evogen --task tool_use --episodes 5
+run_eval --object cabinet/19179_ivw --task tool_use --episodes 5
+run_eval --object cabinet/19179_vlm1shot --task tool_use --episodes 5
 
 echo "=========================================="
 echo "Overnight evaluation completed at $(date)"

@@ -29,6 +29,9 @@ class ToolUseTaskConfig:
     target_joint: str  # Name of the joint to manipulate
     target_position: float  # Target position in radians
     position_tolerance: float = 0.1  # Tolerance for success (radians)
+    fix_base: bool = True  # Whether to fix the object's base in place
+    # Scene layout: object position (x, y, z) - if None, computed from bounding box
+    object_pos: tuple[float, float, float] | None = None
 
 
 @dataclass

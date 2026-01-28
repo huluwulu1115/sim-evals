@@ -317,6 +317,7 @@ def main(
         object_pos: tuple[float, float, float] | None = None,
         object_rot: tuple[float, float, float, float] = (1.0, 0.0, 0.0, 0.0),
         fix_base: bool = False,
+        no_auto_fix_base: bool = False,  # Disable automatic fix_base for tool_use tasks
         keep_bowl: bool = False,
         bowl_pos: tuple[float, float, float] | None = None,
         # Task configuration
@@ -359,8 +360,29 @@ def main(
                 bowl_pos = task_config.bowl_pos
                 print(f"[CONFIG] Using bowl_pos from config: {bowl_pos}")
     
-    # For tool_use tasks, automatically fix the base (object shouldn't move)
-    if task == "tool_use" and not fix_base:
+    # For tool_use tasks, use config values
+    if task == "tool_use" and task_config is not None:
+        # Use object_pos from config if not overridden by CLI
+        if object_pos is None and hasattr(task_config, 'object_pos') and task_config.object_pos is not None:
+            cfg_pos = task_config.object_pos
+            if cfg_pos[2] is None:
+                object_pos = (cfg_pos[0], cfg_pos[1], None)
+            else:
+                object_pos = cfg_pos
+            print(f"[CONFIG] Using object_pos from config: {object_pos}")
+        
+        # Use fix_base from config (defaults to True)
+        # CLI --fix_base or --no_auto_fix_base can override
+        if not no_auto_fix_base:
+            if hasattr(task_config, 'fix_base'):
+                config_fix_base = task_config.fix_base
+                if not fix_base:  # CLI didn't explicitly set fix_base
+                    fix_base = config_fix_base
+                    print(f"[CONFIG] Using fix_base={fix_base} from config")
+            elif not fix_base:
+                fix_base = True
+                print(f"[CONFIG] Automatically enabling fix_base=True for tool_use task")
+    elif task == "tool_use" and not no_auto_fix_base and not fix_base:
         fix_base = True
         print(f"[CONFIG] Automatically enabling fix_base=True for tool_use task")
     
@@ -531,20 +553,22 @@ def main(
         raise ValueError("--client must be one of: jointpos, jointvel")
 
 
-    # Build run name: [task]_[objectid]_[method]
+    # Build run name: [task]_[objecttype]_[objectid]_[method]
     if object is not None:
-        # Parse object path like "stapler/103275_evogen" -> objectid="103275", method="evogen"
+        # Parse object path like "stapler/103275_evogen" -> objecttype="stapler", objectid="103275", method="evogen"
         parts = object.split("/")
         if len(parts) == 2:
+            objecttype = parts[0]  # e.g., "stapler"
             variant = parts[1]  # e.g., "103275_evogen"
             variant_parts = variant.split("_", 1)
             objectid = variant_parts[0]  # e.g., "103275"
             method = variant_parts[1] if len(variant_parts) > 1 else "unknown"  # e.g., "evogen"
         else:
+            objecttype = "unknown"
             objectid = object
             method = "unknown"
         task_name = task if task else "notask"
-        run_name = f"{task_name}_{objectid}_{method}"
+        run_name = f"{task_name}_{objecttype}_{objectid}_{method}"
     else:
         run_name = f"scene{scene}"
     

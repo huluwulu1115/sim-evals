@@ -34,6 +34,15 @@ _TOOL_USE_CONFIG = ToolUseTaskConfig(
     position_tolerance=TOOL_USE_TOLERANCE,
 )
 
+# Separate config for humangensim2 with fix_base disabled
+_TOOL_USE_CONFIG_UNFIXED = ToolUseTaskConfig(
+    prompt=TOOL_USE_PROMPT,
+    target_joint=TOOL_USE_TARGET_JOINT,
+    target_position=TOOL_USE_TARGET_POSITION,
+    position_tolerance=TOOL_USE_TOLERANCE,
+    fix_base=False,
+)
+
 
 # =============================================================================
 # Laptop Object Configurations
@@ -50,7 +59,7 @@ LAPTOP_CONFIGS = {
         object_name="9912_humangensim2",
         initial_rotation=INITIAL_ROTATION,
         grasping=None,
-        tool_use=_TOOL_USE_CONFIG,
+        tool_use=_TOOL_USE_CONFIG_UNFIXED,
     ),
     "9912_ivw": ObjectTaskConfig(
         object_name="9912_ivw",
