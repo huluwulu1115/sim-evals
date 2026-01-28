@@ -21,7 +21,7 @@ INITIAL_ROTATION = (1.0, 0.0, 0.0, 0.0)
 # Tool use: joint_0 is the door hinge
 # Joint limits: lower=0.0 rad (closed), upper=1.57 rad (90°, open)
 TOOL_USE_TARGET_JOINT = "joint_0"
-TOOL_USE_TARGET_POSITION = 0.1  # Target position when closed (radians)
+TOOL_USE_TARGET_POSITION = 0.0  # Target position when closed (radians)
 TOOL_USE_TOLERANCE = 0.2  # Position tolerance (radians)
 
 

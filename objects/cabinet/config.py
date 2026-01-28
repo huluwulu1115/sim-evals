@@ -13,15 +13,16 @@ from objects import (
 # =============================================================================
 
 # Prompts
-TOOL_USE_PROMPT = "Close the cabinet drawer."
+TOOL_USE_PROMPT = "Close the drawer of the cabinet."
 
 # Initial spawn rotation (quaternion: w, x, y, z)
-INITIAL_ROTATION = (1.0, 0.0, 0.0, 0.0)
+# -90 degrees around Z axis to orient cabinet correctly
+INITIAL_ROTATION = (0.7071, 0.0, 0.0, -0.7071)
 
 # Tool use: joint_0 is the drawer (prismatic)
 # Joint limits: lower=0.0 m (closed), upper=1.0 m (open)
 TOOL_USE_TARGET_JOINT = "joint_0"
-TOOL_USE_TARGET_POSITION = 0.05  # Target position when closed (meters)
+TOOL_USE_TARGET_POSITION = 0.0  # Target position when fully closed (meters)
 TOOL_USE_TOLERANCE = 0.1  # Position tolerance (meters)
 
 

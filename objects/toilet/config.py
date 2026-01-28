@@ -16,12 +16,14 @@ from objects import (
 TOOL_USE_PROMPT = "Close the toilet lid."
 
 # Initial spawn rotation (quaternion: w, x, y, z)
-INITIAL_ROTATION = (1.0, 0.0, 0.0, 0.0)
+# -90 degrees around Z axis to orient toilet correctly
+INITIAL_ROTATION = (0.7071, 0.0, 0.0, -0.7071)
 
-# Tool use: joint_0 is the lid hinge
-# Joint limits: lower=0.0 rad (closed), upper=0.52 rad (~30°, open)
-TOOL_USE_TARGET_JOINT = "joint_0"
-TOOL_USE_TARGET_POSITION = 0.05  # Target position when closed (radians)
+# Tool use: joint_2 is the lid hinge
+# Joint limits: lower=0.0 rad (closed), upper=1.745 rad (~100°, open)
+# HumanGenSim2 locks other joints, only joint_2 is movable
+TOOL_USE_TARGET_JOINT = "joint_2"
+TOOL_USE_TARGET_POSITION = 0.0  # Target position when closed (radians)
 TOOL_USE_TOLERANCE = 0.1  # Position tolerance (radians)
 
 

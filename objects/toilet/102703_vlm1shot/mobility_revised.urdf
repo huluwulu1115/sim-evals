@@ -96,7 +96,7 @@
         <axis xyz="-1 0 0" />
         <child link="link_2" />
         <parent link="link_4" />
-        <limit lower="0.0" upper="1.7453" />
+        <limit lower="0.0" upper="1.75" />
         <dynamics damping="0.1" friction="0.5" />
     </joint>
     <link name="link_3">
@@ -123,7 +123,7 @@
         <axis xyz="-1 0 0" />
         <child link="link_3" />
         <parent link="link_4" />
-        <limit lower="0.0" upper="1.693" />
+        <limit lower="0.0" upper="1.70" />
         <dynamics damping="0.1" friction="0.5" />
     </joint>
     <link name="link_4">

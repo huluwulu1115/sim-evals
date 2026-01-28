@@ -13,15 +13,16 @@ from objects import (
 # =============================================================================
 
 # Prompts
-TOOL_USE_PROMPT = "Fold the laptop closed."
+TOOL_USE_PROMPT = "Close the laptop."
 
 # Initial spawn rotation (quaternion: w, x, y, z)
-INITIAL_ROTATION = (1.0, 0.0, 0.0, 0.0)
+# -90 degrees around Z axis to orient laptop correctly
+INITIAL_ROTATION = (0.7071, 0.0, 0.0, -0.7071)
 
 # Tool use: joint_1 is the screen hinge
 # Joint limits: lower=-1.85 rad (closed), upper=0.0 rad (open)
 TOOL_USE_TARGET_JOINT = "joint_1"
-TOOL_USE_TARGET_POSITION = -1.5  # Target position when folded (radians)
+TOOL_USE_TARGET_POSITION = -1.85  # Target position when fully closed (radians)
 TOOL_USE_TOLERANCE = 0.2  # Position tolerance (radians)
 
 
