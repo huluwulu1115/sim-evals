@@ -30,7 +30,7 @@ GRASPING_LIFT_HEIGHT = 0.08  # 8cm lift for grasping success
 
 # Grasping scene layout
 GRASPING_OBJECT_POS = (0.5, -0.12, None)  # z=None means auto-compute from bounding box
-GRASPING_BOWL_POS = (0.5, 0.18, 0.01)  # Bowl on right, z=1cm above table
+GRASPING_BOWL_POS = (0.5, 0.18, None)  # z=None means auto-compute so bowl sits on table
 
 
 # Shared task configs
@@ -38,6 +38,7 @@ _GRASPING_CONFIG = GraspingTaskConfig(
     prompt=GRASPING_PROMPT,
     min_lift_height=GRASPING_LIFT_HEIGHT,
     object_pos=GRASPING_OBJECT_POS,
+    keep_bowl=True,  # Include bowl for pick-and-place
     bowl_pos=GRASPING_BOWL_POS,
 )
 
