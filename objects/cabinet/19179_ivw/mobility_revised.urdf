@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="partnet_1314c9a583812b9fc0eea8e38540939d">
+    <!--
+  INITIAL JOINT POSITIONS (Set by VLM based on desired state)
+  ============================================================
+  joint_0: 0.0
+  joint_1: 0.17742141157811261
+  joint_2: 0.0
+  Reasoning: The first drawer (joint_0) is set to 0.0 (fully closed) as requested. The second drawer (joint_1) is set to 0.122, which is half of its estimated maximum extension (0.244 meters), as requested. The base joint (joint_2) is fixed, so its initial position is 0.0.
+  ============================================================
+  -->
+    <link name="base">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="0.000001" iyy="0.000001" izz="0.000001" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+    </link>
+    <link name="link_0">
+        <visual name="drawer_front-28">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_10.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </visual>
+        <visual name="handle-27">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_11.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_10.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_11.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="3.962338291248703" />
+            <inertia ixx="0.07513083635324354" iyy="0.13340646829989847" izz="0.10925068886052776" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </inertial>
+    </link>
+    <joint name="joint_0" type="prismatic">
+        <origin xyz="0.000000 0.000000 0.000000" />
+        <axis xyz="0 0 1" />
+        <child link="link_0" />
+        <parent link="link_2" />
+        <limit lower="0.0" upper="0.9999999999999917" />
+        <dynamics damping="0.02179236043095005" friction="0.9511165426063771" />
+    </joint>
+    <link name="link_1">
+        <visual name="drawer_front-25">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_13.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </visual>
+        <visual name="drawer_bottom-29">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_2.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </visual>
+        <visual name="handle-24">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_14.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_13.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_2.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_14.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="4.056256983240224" />
+            <inertia ixx="0.10343287453207012" iyy="0.16841204737324256" izz="0.13583251313539477" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </inertial>
+    </link>
+    <joint name="joint_1" type="prismatic">
+        <origin xyz="0.000000 0.000000 0.000000" />
+        <axis xyz="0 0 1" />
+        <child link="link_1" />
+        <parent link="link_2" />
+        <limit lower="0.0" upper="0.9999999999999917" />
+        <dynamics damping="0.02179236043095005" friction="0.9511165426063771" />
+    </joint>
+    <link name="link_2">
+        <visual name="board-32">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_1.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </visual>
+        <visual name="board-32">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_5.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </visual>
+        <visual name="back_panel-19">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_4.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </visual>
+        <visual name="vertical_side_panel-20">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_8.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </visual>
+        <visual name="vertical_side_panel-21">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_7.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </visual>
+        <visual name="bottom_panel-22">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_6.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_1.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_5.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_4.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_8.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_7.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_6.obj" scale="0.531039 0.531039 0.531039" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="23.40531608763222" />
+            <inertia ixx="1.1844472937034642" iyy="1.1866401616411735" izz="1.1765233487458457" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </inertial>
+    </link>
+    <joint name="joint_2" type="fixed">
+        <origin rpy="1.570796326794897 0 -1.570796326794897" xyz="0.000000 0.000000 0.000000" />
+        <child link="link_2" />
+        <parent link="base" />
+        <dynamics damping="0.0" friction="0.0" />
+    </joint>
+</robot>

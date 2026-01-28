@@ -1,0 +1,71 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.07,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 0.025,
+      "inertia": {
+        "ixx": 1.29e-05,
+        "iyy": 1.29e-05,
+        "izz": 2.36e-05,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.05,
+      "inertia": {
+        "ixx": 5.1e-05,
+        "iyy": 5.1e-05,
+        "izz": 9.98e-05,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.02,
+      "friction": 0.1,
+      "stiffness": 0.1,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.3141592653589793
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: vlmoneshot",
+    "User guidance provided: I want a household, plastic light switch being turned off. Low stiffness and damping for smooth switch behavior.",
+    "Method: One-Shot VLM (single query, no aggregation)",
+    "Total mass estimate: 0.075 kg (\u03c3=0.200)",
+    "Scale factor: 0.0700 (\u03c3=0.1000)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 0.0,
+    "joint_1": 0.0,
+    "_reasoning": "The switch is initially set to 0.0 radians, which represents one of its stable toggle positions (e.g., 'off' or 'on'). This aligns with the visual representation of the switch being flat in the provided images and the user's request for it to be 'turned off' which implies a final state. The fixed joint is set to 0.0 as it has no motion."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.3584504836948042,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 2.6341925317274955,
+      "inertia": {
+        "ixx": 0.01189342758429487,
+        "iyy": 0.04783394068068023,
+        "izz": 0.0407849120095562,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 10.16271371780093,
+      "inertia": {
+        "ixx": 0.19026925555526764,
+        "iyy": 0.3992963341380442,
+        "izz": 0.4394393103668004,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.029855695748661235,
+      "friction": 0.29479674003072054,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 1.5707963267948963
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: phys2realivw",
+    "User guidance provided: I want a microwave opening its door halfway. Low damping for hinge-like behavior",
+    "Method: Phys2Real Inverse-Variance Weighted Aggregation (25/25 successful queries)",
+    "Total mass estimate: 12.395 kg (\u03c3=0.046)",
+    "Scale factor: 0.3585 (\u03c3=0.0112)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 0.7853981633974484,
+    "joint_1": 0.0,
+    "_reasoning": "The 'joint_0' (door) is set to an initial position of 0.785398 radians (45 degrees) to represent the door being opened halfway, as requested by the user guidance. The 'joint_1' (microwave_body) is a fixed joint, and its initial position is therefore set to 0.0."
+  }
+}

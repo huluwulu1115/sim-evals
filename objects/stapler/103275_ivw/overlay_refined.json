@@ -1,0 +1,94 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.08495502392344496,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 0.035846796882579315,
+      "inertia": {
+        "ixx": 4.232040294194969e-05,
+        "iyy": 4.298272617571654e-05,
+        "izz": 1.0817519962629185e-06,
+        "ixy": 2.5477710446671734e-25,
+        "ixz": 2.5477710446671734e-25,
+        "iyz": 2.5477710446671734e-25
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.040159684498718,
+      "inertia": {
+        "ixx": 8.117569089436342e-05,
+        "iyy": 7.831929554500858e-05,
+        "izz": 1.1832066805570832e-05,
+        "ixy": 2.550955358801616e-25,
+        "ixz": 2.550955358801616e-25,
+        "iyz": 2.550955358801616e-25
+      }
+    },
+    "link_2": {
+      "_action": "new",
+      "mass": 0.11038194028060917,
+      "inertia": {
+        "ixx": 0.00023836164217140175,
+        "iyy": 0.00024014284641329936,
+        "izz": 8.011386010068871e-06,
+        "ixy": 2.550955358801616e-25,
+        "ixz": 2.550955358801616e-25,
+        "iyz": 2.550955358801616e-25
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.014737444789792244,
+      "friction": 0.13099301784328937,
+      "stiffness": 4.8562962962952005e-17,
+      "limit_modifications": {
+        "lower": -7.999999999991165e-17,
+        "upper": 2.57610597594363
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.014932159234242197,
+      "friction": 0.13333333333333333,
+      "stiffness": 1.2499999999997459e-17,
+      "limit_modifications": {
+        "lower": -0.11938052083640972,
+        "upper": 3.3866368805697973
+      }
+    },
+    "joint_2": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: phys2realivw",
+    "User guidance provided: I want a slightly open stapler",
+    "Method: Phys2Real Inverse-Variance Weighted Aggregation (25/25 successful queries)",
+    "Total mass estimate: 0.225 kg (\u03c3=0.011)",
+    "Scale factor: 0.0850 (\u03c3=0.0031)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 0.0580394366197183,
+    "joint_1": 0.3221463414634147,
+    "joint_2": 0.0,
+    "_reasoning": "The stapler is initialized in a slightly open state as requested. Joint_0 (the main stapler body arm) is set to 0.3 radians, representing a moderate opening for pressing staples. Joint_1 (the lid) is set to 0.4 radians, indicating that the lid is also slightly raised. Joint_2 is a fixed joint and thus its initial position is set to 0.0."
+  }
+}

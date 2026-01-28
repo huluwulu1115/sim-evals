@@ -1,0 +1,81 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.048,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "mass": 0.04,
+      "inertia": {
+        "ixx": 1.2e-05,
+        "iyy": 1.2e-05,
+        "izz": 2.4e-05,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      },
+      "_action": "new",
+      "_visual_notes": "Visually, link_0 (toggle_button) appears to be a solid, dark gray, smooth plastic part. It has a rounded square shape, typical for a modern light switch button. User specified 'plastic light switch'."
+    },
+    "link_1": {
+      "mass": 0.05,
+      "inertia": {
+        "ixx": 2.5e-05,
+        "iyy": 2.5e-05,
+        "izz": 4.7e-05,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      },
+      "_action": "new",
+      "_visual_notes": "Visually, link_1 (switch_frame) appears to be a dark gray, smooth plastic frame, surrounding link_0. It is larger and provides the base structure. User specified 'plastic light switch'."
+    },
+    "base": {
+      "mass": 0.001,
+      "inertia": {
+        "ixx": 1e-06,
+        "iyy": 1e-06,
+        "izz": 1e-06,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "damping": 5.0,
+      "friction": 0.05,
+      "stiffness": 5.0,
+      "_action": "new"
+    }
+  },
+  "initial_joint_positions": {
+    "joint_0": 0.3041592741012573,
+    "_reasoning": "Observed the object in its default/neutral state (likely 'on' or centered) at joint position 0 in the rendered images. User requested the switch to be 'turned off'. Given the joint range 0.0\u00b0 to 18.0\u00b0, setting joint_0 to its maximum limit of 18.0\u00b0 (0.314 rad) represents the 'off' state. (Sapien+VLM iterative refinement)"
+  },
+  "validation_notes": [
+    "SIZE REASONING: A real-world household light switch face is typically about 0.07-0.08m (7-8cm) in width/height, with a depth of 0.02-0.03m for the visible part. Current mesh dimensions are [1.56, 1.56, 0.40]m. Applying a uniform_scale_factor of 0.048 results in a final size of [0.075, 0.075, 0.019]m, which is a realistic size for a standard square light switch face.",
+    "VISUAL MATERIAL REASONING: Both link_0 (toggle_button) and link_1 (switch_frame) visually appear to be made of smooth, dark gray plastic with a slightly matte finish. This aligns perfectly with the user's guidance specifying a 'plastic light switch'. Therefore, a density of 1040 kg/m\u00b3 (typical for ABS plastic) was used for mass calculations.",
+    "MASS CALCULATIONS: For link_0 (toggle_button), estimated scaled dimensions are 0.06m x 0.06m x 0.01m (protrusion). Estimated volume = 0.000036 m\u00b3. Mass = 0.000036 m\u00b3 * 1040 kg/m\u00b3 = 0.037 kg, rounded to 0.04 kg. For link_1 (switch_frame), estimated scaled outer dimensions are 0.075m x 0.075m x 0.019m. Assuming it's a partially hollow frame, an effective volume of ~0.00005 m\u00b3 was estimated. Mass = 0.00005 m\u00b3 * 1040 kg/m\u00b3 = 0.052 kg, rounded to 0.05 kg.",
+    "USER GUIDANCE INTEGRATION: User specified 'low stiffness and damping for smooth switch behavior' for the switch. Accordingly, joint_0 damping and stiffness were set to 5.0 (low values within the typical range) and friction to 0.05 for smooth plastic-on-plastic motion.",
+    "FINAL SIZE: 0.019m \u00d7 0.075m \u00d7 0.075m (note: only 1 dim(s) \u2264 0.075m gripper - realistic size preserved)",
+    "Added minimal inertial properties to link 'base'",
+    "STATE REFINEMENT: Collision-free in 1 iteration(s). Positions: {'joint_0': 0.3041592741012573}"
+  ],
+  "initial_joint_positions_vlm_original": {
+    "joint_0": 0.31415926535,
+    "_reasoning": "Observed the object in its default/neutral state (likely 'on' or centered) at joint position 0 in the rendered images. User requested the switch to be 'turned off'. Given the joint range 0.0\u00b0 to 18.0\u00b0, setting joint_0 to its maximum limit of 18.0\u00b0 (0.314 rad) represents the 'off' state."
+  },
+  "_state_refinement_history": {
+    "iteration_0": {
+      "penetration_sum": 0.0,
+      "contact_count": 0
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "object_id": "7236",
+  "object_name": "microwave",
+  "task_type": "tool_use",
+  "guidance": "I want a microwave opening its door halfway. Low damping for hinge-like behavior.",
+  "model_name": "gemini-2.5-flash",
+  "target_dimensions": null,
+  "task_names": {
+    "direct": "Isaac-Microwave-Tooluse-v0"
+  }
+}

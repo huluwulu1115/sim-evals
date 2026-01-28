@@ -1,0 +1,71 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.22,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 0.05,
+      "inertia": {
+        "ixx": 9.54e-05,
+        "iyy": 0.0002417,
+        "izz": 0.0003338,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.45,
+      "inertia": {
+        "ixx": 0.000915,
+        "iyy": 0.002535,
+        "izz": 0.0027,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.2,
+      "friction": 0.1,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": -1.5707963267948966,
+        "upper": 1.5707963267948966
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: vlmoneshot",
+    "User guidance provided: I want a small purse/handbag with handle moving freely, at resting position with handle lying sideways.",
+    "Method: One-Shot VLM (single query, no aggregation)",
+    "Total mass estimate: 0.500 kg (\u03c3=0.150)",
+    "Scale factor: 0.2200 (\u03c3=0.1000)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 1.5707963267948966,
+    "joint_1": 0.0,
+    "_reasoning": "Joint_0 (handle hinge) is set to 1.57 radians (90 degrees) to place the handle 'lying sideways' as requested by the user. This rotates it fully to one side from a theoretical upright position of 0.0. Joint_1 is a fixed joint, so its initial position is set to 0.0."
+  }
+}

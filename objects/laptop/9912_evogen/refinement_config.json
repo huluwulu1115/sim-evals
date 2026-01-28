@@ -1,0 +1,11 @@
+{
+  "object_id": "9912",
+  "object_name": "laptop",
+  "task_type": "tool_use",
+  "guidance": "I want a slightly open laptop. Low damping for smooth operation.",
+  "model_name": "gemini-2.5-flash",
+  "target_dimensions": null,
+  "task_names": {
+    "direct": "Isaac-Laptop-Tooluse-v0"
+  }
+}

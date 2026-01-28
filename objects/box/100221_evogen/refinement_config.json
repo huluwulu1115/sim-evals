@@ -1,0 +1,11 @@
+{
+  "object_id": "100221",
+  "object_name": "box",
+  "task_type": "tool_use",
+  "guidance": "A very small jewelry box/treasure chest with slightly open rotational lid. Low damping for a smooth hinge behavior.",
+  "model_name": "gemini-2.5-flash",
+  "target_dimensions": null,
+  "task_names": {
+    "direct": "Isaac-Box-Tooluse-v0"
+  }
+}

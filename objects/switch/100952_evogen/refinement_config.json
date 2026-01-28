@@ -1,0 +1,11 @@
+{
+  "object_id": "100952",
+  "object_name": "switch",
+  "task_type": "tool_use",
+  "guidance": "I want a household, plastic light switch being turned off. Low stiffness and damping for smooth switch behavior.",
+  "model_name": "gemini-2.5-flash",
+  "target_dimensions": null,
+  "task_names": {
+    "direct": "Isaac-Switch-Tooluse-v0"
+  }
+}

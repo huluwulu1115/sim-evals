@@ -1,0 +1,11 @@
+{
+  "object_id": "103275",
+  "object_name": "stapler_test",
+  "task_type": "grasping",
+  "guidance": "I want a slightly open stapler",
+  "model_name": "gemini-2.5-flash",
+  "target_dimensions": null,
+  "task_names": {
+    "direct": "Isaac-StaplerTest-Grasping-v0"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.5,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 2.5,
+      "inertia": {
+        "ixx": 0.076,
+        "iyy": 0.126,
+        "izz": 0.076,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 2.5,
+      "inertia": {
+        "ixx": 0.076,
+        "iyy": 0.126,
+        "izz": 0.076,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_2": {
+      "_action": "new",
+      "mass": 20.0,
+      "inertia": {
+        "ixx": 1.2,
+        "iyy": 1.2,
+        "izz": 1.2,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.3,
+      "friction": 8.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.5
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.3,
+      "friction": 8.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.5
+      }
+    },
+    "joint_2": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: vlmoneshot",
+    "User guidance provided: I want a 2-drawer, under desk office cabinet, with first drawer fully closed, second drawer halfway open and low damping, sliding joints.",
+    "Method: One-Shot VLM (single query, no aggregation)",
+    "Total mass estimate: 25.000 kg (\u03c3=5.000)",
+    "Scale factor: 0.5000 (\u03c3=0.0500)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 0.0,
+    "joint_1": 0.25,
+    "joint_2": 0.0,
+    "_reasoning": "Joint_0 (top drawer) is set to 0.0 to be fully closed, as requested. Joint_1 (bottom drawer) is set to 0.25m, representing halfway open based on an estimated upper limit of 0.5m after scaling. Joint_2 (fixed base) is set to 0.0 as it does not articulate."
+  }
+}

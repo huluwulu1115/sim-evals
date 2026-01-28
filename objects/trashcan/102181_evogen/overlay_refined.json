@@ -1,0 +1,104 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.19,
+    "material_properties": {
+      "friction": 0.6,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "mass": 0.05,
+      "inertia": {
+        "ixx": 2.1e-06,
+        "iyy": 1.08e-05,
+        "izz": 1.2e-05,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      },
+      "_action": "new",
+      "_visual_notes": "Visually appears as a small, dark grey plastic foot pedal. Smooth matte finish, consistent with molded plastic. Estimated as a small solid block."
+    },
+    "link_1": {
+      "mass": 0.15,
+      "inertia": {
+        "ixx": 0.00051,
+        "iyy": 0.00046,
+        "izz": 0.00095,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      },
+      "_action": "new",
+      "_visual_notes": "The lid appears as a smooth, reddish-brown plastic component, with a dark grey band at the top. It seems to be a relatively thin shell, but for inertia calculations, it's approximated as a flat plastic plate."
+    },
+    "link_2": {
+      "mass": 0.8,
+      "inertia": {
+        "ixx": 0.00101,
+        "iyy": 0.00097,
+        "izz": 0.00062,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      },
+      "_action": "new",
+      "_visual_notes": "The main trashcan body is a large, reddish-brown rectangular prism. It has a smooth, matte finish, visually indicating a plastic material. It likely has some internal structure, but is assumed to be mostly hollow for mass estimation. Approximated as a hollow box for mass and inertia."
+    },
+    "base": {
+      "mass": 0.001,
+      "inertia": {
+        "ixx": 1e-06,
+        "iyy": 1e-06,
+        "izz": 1e-06,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "damping": 10.0,
+      "friction": 0.05,
+      "stiffness": 0.5,
+      "_action": "new"
+    },
+    "joint_1": {
+      "damping": 10.0,
+      "friction": 0.1,
+      "stiffness": 0.1,
+      "_action": "new"
+    }
+  },
+  "initial_joint_positions": {
+    "joint_0": 0.01,
+    "joint_1": 0.35,
+    "_reasoning": "Observed default position for 'joint_1' (lid) in images is 0.0 (closed). User requested the lid to be 'slightly open'. Joint range is 0.0 to 180.7 degrees. 0.35 radians corresponds to approximately 20 degrees, which achieves a 'slightly open' state for the lid. (Sapien+VLM iterative refinement)"
+  },
+  "validation_notes": [
+    "SIZE REASONING: A real-world 'very small, personal trash can' is typically around 0.20m x 0.20m x 0.28m (W x D x H) based on common product dimensions. Current mesh dimensions are [0.988, 1.054, 1.498]m. Applying a uniform scale of 0.19 gives final dimensions of approximately [0.187, 0.200, 0.285]m, which matches the target for a 'very small, personal' trash can and is suitable for robot manipulation.",
+    "VISUAL MATERIAL REASONING: All visible parts (trashcan_body, lid, foot_pad) exhibit a smooth, matte, colored finish consistent with molded ABS plastic. Therefore, an approximate density of 1040 kg/m\u00b3 (for ABS plastic) was used for mass estimations. A friction coefficient of 0.6 is applied globally for plastic-on-ground/plastic-on-plastic interactions.",
+    "MASS CALCULATIONS: Due to non-watertight meshes and no provided mesh volumes, masses were estimated based on the scaled object's dimensions and the inferred plastic material. Total mass is ~1.0 kg for the scaled object (0.8kg for body, 0.15kg for lid, 0.05kg for foot_pad), which is realistic for a very small plastic trashcan.",
+    "  - link_2 (trashcan_body): Estimated 0.8 kg. Approximated as a hollow plastic box with scaled dimensions of ~0.19m x 0.20m x 0.28m.",
+    "  - link_1 (lid): Estimated 0.15 kg. Approximated as a thin plastic plate with scaled dimensions of ~0.19m x 0.20m x 0.03m.",
+    "  - link_0 (foot_pad): Estimated 0.05 kg. Approximated as a small solid plastic block with scaled dimensions of ~0.05m x 0.02m x 0.01m.",
+    "USER GUIDANCE INTEGRATION: 'A very small, personal trash can' was addressed by the uniform scale factor of 0.19. 'Lid slightly open' was addressed by setting `initial_joint_positions` for `joint_1` to 0.35 radians (20 degrees). 'Lid hinge has low damping and holds its position' was interpreted by setting `joint_1` stiffness to 0.1 (very low, no strong return force), damping to 10.0 (low to moderate, prevents wild oscillation but still allows movement), and friction to 0.1 (a small amount of static resistance to help hold position).",
+    "FINAL SIZE: 0.188m \u00d7 0.200m \u00d7 0.285m (note: only 0 dim(s) \u2264 0.075m gripper - realistic size preserved)",
+    "Added minimal inertial properties to link 'base'",
+    "STATE REFINEMENT: Collision-free in 1 iteration(s). Positions: {'joint_0': 0.01, 'joint_1': 0.35}"
+  ],
+  "initial_joint_positions_vlm_original": {
+    "joint_1": 0.35,
+    "_reasoning": "Observed default position for 'joint_1' (lid) in images is 0.0 (closed). User requested the lid to be 'slightly open'. Joint range is 0.0 to 180.7 degrees. 0.35 radians corresponds to approximately 20 degrees, which achieves a 'slightly open' state for the lid."
+  },
+  "_state_refinement_history": {
+    "iteration_0": {
+      "penetration_sum": 0.0,
+      "contact_count": 0
+    }
+  }
+}

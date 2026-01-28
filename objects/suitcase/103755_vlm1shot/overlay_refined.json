@@ -1,0 +1,94 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.33,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 0.15,
+      "inertia": {
+        "ixx": 2.28e-05,
+        "iyy": 0.000264,
+        "izz": 0.000285,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.6,
+      "inertia": {
+        "ixx": 0.00689,
+        "iyy": 0.01502,
+        "izz": 0.01212,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_2": {
+      "_action": "new",
+      "mass": 2.25,
+      "inertia": {
+        "ixx": 0.02232,
+        "iyy": 0.03836,
+        "izz": 0.0599,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.05,
+      "friction": 0.1,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": -1.5707963267948966,
+        "upper": 1.5707963267948966
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.05,
+      "friction": 0.2,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": -1.0471975511965976,
+        "upper": 2.0943951023931953
+      }
+    },
+    "joint_2": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: vlmoneshot",
+    "User guidance provided: I want a small business suitcase with its lid just slightly open and low damping hinge.",
+    "Method: One-Shot VLM (single query, no aggregation)",
+    "Total mass estimate: 3.000 kg (\u03c3=0.500)",
+    "Scale factor: 0.3300 (\u03c3=0.0500)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 0.0,
+    "joint_1": 0.1,
+    "joint_2": 0.0,
+    "_reasoning": "The handle (joint_0) is set to 0.0 radians, representing its default resting position parallel to the suitcase body when not in use. The lid (joint_1) is set to 0.1 radians, making it just slightly open as requested by the user. The base body (joint_2) is a fixed joint, so its initial position is 0.0."
+  }
+}

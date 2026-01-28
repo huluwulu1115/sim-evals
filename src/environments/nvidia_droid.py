@@ -67,8 +67,9 @@ NVIDIA_DROID = ArticulationCfg(
             ),
             "gripper": ImplicitActuatorCfg(
                 joint_names_expr=["finger_joint"],
-                stiffness=None,
-                damping=None,
+                effort_limit=20.0,
+                stiffness=100.0,
+                damping=20.0,
                 velocity_limit=1.0,
             ),
         },

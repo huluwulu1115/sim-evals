@@ -1,0 +1,71 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.30879389312977096,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 1.2249760348583878,
+      "inertia": {
+        "ixx": 0.006256016777019544,
+        "iyy": 0.011757121740062326,
+        "izz": 0.012730205872335257,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.586361873990307,
+      "inertia": {
+        "ixx": 0.004479744547028144,
+        "iyy": 0.00629800910785056,
+        "izz": 0.007106217022304704,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.02777574872169467,
+      "friction": 0.6358795345653662,
+      "stiffness": 1.3888888888888087e-19,
+      "limit_modifications": {
+        "lower": -1.8509215227315408,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: phys2realivw",
+    "User guidance provided: I want a slightly open laptop. Low damping for smooth operation.",
+    "Method: Phys2Real Inverse-Variance Weighted Aggregation (25/25 successful queries)",
+    "Total mass estimate: 1.790 kg (\u03c3=0.051)",
+    "Scale factor: 0.3088 (\u03c3=0.0062)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 0.0,
+    "joint_1": -0.722344,
+    "_reasoning": "The 'joint_0' is a fixed joint, so its initial position is set to 0.0. For 'joint_1', which controls the laptop screen, the requested state is 'slightly open'. Given the URDF limits where 0.0 radians is closed and -1.85 radians (approx 106 degrees) is fully open, an angle of -0.785 radians (approx 45 degrees) represents a reasonable 'slightly open' position for the laptop screen."
+  }
+}

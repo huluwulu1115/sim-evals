@@ -1,0 +1,11 @@
+{
+  "object_id": "19179",
+  "object_name": "cabinet",
+  "task_type": "tool_use",
+  "guidance": "I want a 2-drawer, under desk office cabinet, with first drawer fully closed, second drawer halfway open and low damping, sliding joints.",
+  "model_name": "gemini-2.5-flash",
+  "target_dimensions": null,
+  "task_names": {
+    "direct": "Isaac-Cabinet-Tooluse-v0"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.23,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 0.02,
+      "inertia": {
+        "ixx": 3e-06,
+        "iyy": 1.8e-05,
+        "izz": 1.8e-05,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.08,
+      "inertia": {
+        "ixx": 0.00027,
+        "iyy": 0.00027,
+        "izz": 0.00053,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_2": {
+      "_action": "new",
+      "mass": 0.4,
+      "inertia": {
+        "ixx": 0.0043,
+        "iyy": 0.0043,
+        "izz": 0.0026,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.1,
+      "friction": 0.5,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.57
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.1,
+      "friction": 5.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 3.14
+      }
+    },
+    "joint_2": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: vlmoneshot",
+    "User guidance provided: A very small, personal trash can with its lid slightly open. The lid hinge has low damping and holds its position.",
+    "Method: One-Shot VLM (single query, no aggregation)",
+    "Total mass estimate: 0.500 kg (\u03c3=0.100)",
+    "Scale factor: 0.2300 (\u03c3=0.0500)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 0.0,
+    "joint_1": 0.35,
+    "joint_2": 0.0,
+    "_reasoning": "The foot_pad (joint_0) is in its unpressed default state (0.0 radians). The lid (joint_1) is set to a slightly open position (0.35 radians, approximately 20 degrees) as per user guidance. The base_body (joint_2) is a fixed joint, so its initial position is 0.0."
+  }
+}

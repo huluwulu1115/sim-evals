@@ -1,0 +1,71 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.1940032414910859,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 0.05188969852836121,
+      "inertia": {
+        "ixx": 8.240927537654324e-05,
+        "iyy": 0.00019503750163927998,
+        "izz": 0.00027196250231550803,
+        "ixy": 4.629629614197533e-22,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.44524310686610197,
+      "inertia": {
+        "ixx": 0.0022336896145504874,
+        "iyy": 0.002763849492969261,
+        "izz": 0.00406868999864397,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.01599152111243005,
+      "friction": 0.04926223919269058,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": -1.5707962974613912,
+        "upper": 1.5707962974613912
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: phys2realivw",
+    "User guidance provided: I want a small purse/handbag with handle moving freely, at resting position with handle lying sideways.",
+    "Method: Phys2Real Inverse-Variance Weighted Aggregation (25/25 successful queries)",
+    "Total mass estimate: 0.514 kg (\u03c3=0.026)",
+    "Scale factor: 0.1940 (\u03c3=0.0085)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 1.493370990957016,
+    "joint_1": 0.0,
+    "_reasoning": "The 'joint_1' is a fixed joint connecting the base to the main body, so its initial position is 0.0. For 'joint_0', which is the handle, the user requested it to be in a 'resting position with handle lying sideways'. Assuming the upright position in the image corresponds to 0 radians, rotating it by -PI/2 radians (-90 degrees) would make it lie flat along one side of the purse body, fulfilling the 'lying sideways' requirement."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "object_id": "102703",
+  "object_name": "toilet",
+  "task_type": "tool_use",
+  "guidance": "I want a very small toilet for a baby, with its lid open all the way. Low damping for hinge-like behavior.",
+  "model_name": "gemini-2.5-flash",
+  "target_dimensions": null,
+  "task_names": {
+    "direct": "Isaac-Toilet-Tooluse-v0"
+  }
+}

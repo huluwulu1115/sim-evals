@@ -1,0 +1,94 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.1,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 0.1,
+      "inertia": {
+        "ixx": 0.000157,
+        "iyy": 0.000159,
+        "izz": 4e-06,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.05,
+      "inertia": {
+        "ixx": 9.3e-05,
+        "iyy": 8.9e-05,
+        "izz": 9e-06,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_2": {
+      "_action": "new",
+      "mass": 0.15,
+      "inertia": {
+        "ixx": 0.000442,
+        "iyy": 0.000454,
+        "izz": 1.3e-05,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.01,
+      "friction": 0.1,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 2.57
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.01,
+      "friction": 0.1,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 3.0
+      }
+    },
+    "joint_2": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: vlmoneshot",
+    "User guidance provided: I want a slightly open stapler",
+    "Method: One-Shot VLM (single query, no aggregation)",
+    "Total mass estimate: 0.300 kg (\u03c3=0.050)",
+    "Scale factor: 0.1000 (\u03c3=0.0100)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 2.0,
+    "joint_1": 0.0,
+    "joint_2": 0.0,
+    "_reasoning": "Joint_0 (stapler_body relative to lid) is set to 2.0 radians to represent a 'slightly open' state as requested, where the stapler's pressing arm is partially lifted (0.0 being fully pressed, 2.57 being fully open/relaxed). Joint_1 (lid relative to base) is set to 0.0 radians, indicating that the stapler's lid is closed onto its base, which is its typical resting position. Joint_2 is a fixed joint, so its initial position is 0.0."
+  }
+}

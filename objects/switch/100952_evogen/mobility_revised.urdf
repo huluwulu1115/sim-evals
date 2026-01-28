@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="partnet_d440abd3ea98676f877975b30c3a0670">
+    <!--
+  INITIAL JOINT POSITIONS (Set by VLM based on desired state)
+  ============================================================
+  joint_0: 0.31415926535
+  Reasoning: Observed the object in its default/neutral state (likely 'on' or centered) at joint position 0 in the rendered images. User requested the switch to be 'turned off'. Given the joint range 0.0° to 18.0°, setting joint_0 to its maximum limit of 18.0° (0.314 rad) represents the 'off' state.
+  ============================================================
+  -->
+    <link name="base">
+        <inertial>
+            <mass value="0.001" />
+            <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </inertial>
+    </link>
+    <link name="link_0">
+        <visual name="switch-1">
+            <origin xyz="-0.025600 -0.000426 -0.002880" />
+            <geometry>
+                <mesh filename="textured_objs/original_4.obj" scale="0.048000 0.048000 0.048000" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="-0.025600 -0.000426 -0.002880" />
+            <geometry>
+                <mesh filename="textured_objs/original_4.obj" scale="0.048000 0.048000 0.048000" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.04" />
+            <inertia ixx="1.2e-05" iyy="1.2e-05" izz="2.4e-05" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </inertial>
+    </link>
+    <joint name="joint_0" type="revolute">
+        <origin xyz="0.025600 0.000426 0.002880" />
+        <axis xyz="1 0 0" />
+        <child link="link_0" />
+        <parent link="link_1" />
+        <limit lower="0.0" upper="0.3141592653589793" />
+        <dynamics damping="5.0" friction="0.05" stiffness="5.0" />
+    </joint>
+    <link name="link_1">
+        <visual name="base_body-2">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_3.obj" scale="0.048000 0.048000 0.048000" />
+            </geometry>
+        </visual>
+        <visual name="base_body-2">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_2.obj" scale="0.048000 0.048000 0.048000" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_3.obj" scale="0.048000 0.048000 0.048000" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_2.obj" scale="0.048000 0.048000 0.048000" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.05" />
+            <inertia ixx="2.5e-05" iyy="2.5e-05" izz="4.7e-05" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </inertial>
+    </link>
+    <joint name="joint_1" type="fixed">
+        <origin rpy="1.570796326794897 0 -1.570796326794897" xyz="0.000000 0.000000 0.000000" />
+        <child link="link_1" />
+        <parent link="base" />
+    </joint>
+</robot>

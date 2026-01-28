@@ -1,0 +1,11 @@
+{
+  "object_id": "102181",
+  "object_name": "trashcan",
+  "task_type": "tool_use",
+  "guidance": "A very small, personal trash can with its lid slightly open. The lid hinge has low damping and holds its position.",
+  "model_name": "gemini-2.5-flash",
+  "target_dimensions": null,
+  "task_names": {
+    "direct": "Isaac-Trashcan-Tooluse-v0"
+  }
+}

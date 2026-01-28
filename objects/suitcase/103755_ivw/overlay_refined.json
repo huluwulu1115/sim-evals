@@ -1,0 +1,94 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.3435173116765954,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 0.07917047857026956,
+      "inertia": {
+        "ixx": 9.087751940471658e-06,
+        "iyy": 0.00016240472042344106,
+        "izz": 0.00017548379585679834,
+        "ixy": 1.4285506084667014e-13,
+        "ixz": 1.4285506084667014e-13,
+        "iyz": 1.4285506084667014e-13
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.7711970907301292,
+      "inertia": {
+        "ixx": 0.011396615070009435,
+        "iyy": 0.02838667828943419,
+        "izz": 0.022919717212263147,
+        "ixy": 1.4285714285091817e-15,
+        "ixz": 1.4285714285091817e-15,
+        "iyz": 1.4285714285091817e-15
+      }
+    },
+    "link_2": {
+      "_action": "new",
+      "mass": 2.0624129287813333,
+      "inertia": {
+        "ixx": 0.028676264876644632,
+        "iyy": 0.04752795849082838,
+        "izz": 0.07273553599260806,
+        "ixy": 1.4285714285498962e-15,
+        "ixz": 1.4285714285498962e-15,
+        "iyz": 1.4285714285498962e-15
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.021482980132709894,
+      "friction": 0.1602484497012585,
+      "stiffness": 4e-18,
+      "limit_modifications": {
+        "lower": -1.5707580362969473,
+        "upper": 1.5707580362969473
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.02014065104760227,
+      "friction": 0.27570652147385133,
+      "stiffness": 4e-18,
+      "limit_modifications": {
+        "lower": -1.6308544761561268,
+        "upper": 1.4551790586129074
+      }
+    },
+    "joint_2": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: phys2realivw",
+    "User guidance provided: I want a small business suitcase with its lid just slightly open and low damping hinge.",
+    "Method: Phys2Real Inverse-Variance Weighted Aggregation (25/25 successful queries)",
+    "Total mass estimate: 2.997 kg (\u03c3=0.072)",
+    "Scale factor: 0.3435 (\u03c3=0.0115)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": -0.0021153761378663854,
+    "joint_1": 0.23420361239704374,
+    "joint_2": 0.0,
+    "_reasoning": "Joint 0 (handle) is set to 0.0, representing a natural resting position where the handle is folded down against the suitcase body. Joint 1 (lid) is set to 0.1745 radians (approximately 10 degrees) to represent the lid being 'just slightly open' as requested. Joint 2 is a fixed joint, so its initial position is set to 0.0."
+  }
+}

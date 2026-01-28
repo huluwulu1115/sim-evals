@@ -1,0 +1,140 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.25,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 0.01,
+      "inertia": {
+        "ixx": 6.5e-07,
+        "iyy": 6.6e-07,
+        "izz": 8e-08,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.04,
+      "inertia": {
+        "ixx": 2.9e-05,
+        "iyy": 0.000185,
+        "izz": 0.000158,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_2": {
+      "_action": "new",
+      "mass": 0.2,
+      "inertia": {
+        "ixx": 0.000838,
+        "iyy": 0.001386,
+        "izz": 0.000618,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_3": {
+      "_action": "new",
+      "mass": 0.15,
+      "inertia": {
+        "ixx": 0.000446,
+        "iyy": 0.000891,
+        "izz": 0.000448,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_4": {
+      "_action": "new",
+      "mass": 1.6,
+      "inertia": {
+        "ixx": 0.036016,
+        "iyy": 0.026256,
+        "izz": 0.025766,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.1,
+      "friction": 0.5,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.5236
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.1,
+      "friction": 0.5,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.01
+      }
+    },
+    "joint_2": {
+      "_action": "new",
+      "damping": 0.1,
+      "friction": 0.5,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 1.7453
+      }
+    },
+    "joint_3": {
+      "_action": "new",
+      "damping": 0.1,
+      "friction": 0.5,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 1.693
+      }
+    },
+    "joint_4": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: vlmoneshot",
+    "User guidance provided: I want a very small toilet for a baby, with its lid open all the way. Low damping for hinge-like behavior.",
+    "Method: One-Shot VLM (single query, no aggregation)",
+    "Total mass estimate: 2.000 kg (\u03c3=0.500)",
+    "Scale factor: 0.2500 (\u03c3=0.0200)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 0.0,
+    "joint_1": 0.0,
+    "joint_2": 1.7453,
+    "joint_3": 1.693,
+    "joint_4": 0.0,
+    "_reasoning": "Joint 0 (lever) and Joint 1 (pump lid) are set to 0.0 (closed/not pressed) as their default, inactive state. Joint 2 (main lid) and Joint 3 (seat) are set to their respective upper limits (1.7453 rad and 1.6930 rad) to fulfill the user guidance requirement for the 'lid open all the way'. Joint 4 is a fixed joint and remains at 0.0."
+  }
+}

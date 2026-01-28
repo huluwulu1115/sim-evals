@@ -1,0 +1,152 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.2136665500594697,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 0.017296015799993743,
+      "inertia": {
+        "ixx": 1.0784216335541342e-06,
+        "iyy": 1.0948565121413267e-06,
+        "izz": 8.383251231527115e-08,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.04093900493087885,
+      "inertia": {
+        "ixx": 2.4014755293081565e-05,
+        "iyy": 4.65493722155047e-05,
+        "izz": 3.990860739844138e-05,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_2": {
+      "_action": "new",
+      "mass": 0.18199368260060592,
+      "inertia": {
+        "ixx": 0.0005574171268672225,
+        "iyy": 0.0009161109361436134,
+        "izz": 0.00041132516329928017,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_3": {
+      "_action": "new",
+      "mass": 0.15815909103512343,
+      "inertia": {
+        "ixx": 0.00026692938867949864,
+        "iyy": 0.0005285974199683102,
+        "izz": 0.00026939989119595305,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_4": {
+      "_action": "new",
+      "mass": 1.5419177938641524,
+      "inertia": {
+        "ixx": 0.02766259149653866,
+        "iyy": 0.020964703661326252,
+        "izz": 0.01929881239291908,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "base": {
+      "_action": "new",
+      "mass": 0.0,
+      "inertia": {
+        "ixx": 0.0,
+        "iyy": 0.0,
+        "izz": 0.0,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.011580112682669948,
+      "friction": 0.09063928411731624,
+      "stiffness": 2.965679012345672e-17,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.5235987755982988
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.0017416619044479098,
+      "friction": 0.06581271433954101,
+      "stiffness": 1.0416666666666633e-19,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.01
+      }
+    },
+    "joint_2": {
+      "_action": "new",
+      "damping": 0.013918121776123862,
+      "friction": 0.08485131861130087,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": -7.85393750398855e-16,
+        "upper": 1.74532925199431
+      }
+    },
+    "joint_3": {
+      "_action": "new",
+      "damping": 0.013896697487572267,
+      "friction": 0.08560423518131573,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": -7.618282748868895e-16,
+        "upper": 1.692969374434481
+      }
+    },
+    "joint_4": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: phys2realivw",
+    "User guidance provided: I want a very small toilet for a baby, with its lid open all the way. Low damping for hinge-like behavior.",
+    "Method: Phys2Real Inverse-Variance Weighted Aggregation (25/25 successful queries)",
+    "Total mass estimate: 2.267 kg (\u03c3=0.058)",
+    "Scale factor: 0.2137 (\u03c3=0.0075)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 0.0,
+    "joint_1": 0.0,
+    "joint_2": 1.0861010875959203,
+    "joint_3": 4.529220404393792e-15,
+    "joint_4": 0.0,
+    "_reasoning": "The flush lever (joint_0) and pump lid (joint_1) are set to 0.0 radians/meters, representing their natural resting positions when not in use. The main lid (joint_2) is set to its upper limit of 1.745 radians (approximately 100 degrees) as per the user's request for the 'lid open all the way'. The toilet seat (joint_3) is assumed to be in its closed (down) position at 0.0 radians, which is a typical resting state for a toilet. The base body (joint_4) is a fixed joint, so its initial position is 0.0."
+  }
+}

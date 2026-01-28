@@ -1,0 +1,4010 @@
+{
+  "object_type": "box",
+  "asset_path": "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_box/100221",
+  "bounding_box": {
+    "min": [
+      -0.576024,
+      -0.51245,
+      -0.469022
+    ],
+    "max": [
+      0.589266,
+      0.892644,
+      0.504699
+    ],
+    "dimensions": [
+      1.16529,
+      1.405094,
+      0.9737210000000001
+    ],
+    "center": [
+      0.006620999999999988,
+      0.19009700000000002,
+      0.017838500000000007
+    ],
+    "diagonal_length": 2.068894032756874,
+    "volume": 1.5943142771767944
+  },
+  "metadata": {
+    "user_id": "yuzhe",
+    "model_cat": "Box",
+    "model_id": "952e325fe026ab9c48e2701b91d7249c",
+    "version": "1",
+    "anno_id": "221",
+    "time_in_sec": "98"
+  },
+  "semantics": {
+    "link_0": {
+      "joint_type": "hinge",
+      "semantic_name": "rotation_lid"
+    },
+    "link_1": {
+      "joint_type": "free",
+      "semantic_name": "box_body"
+    }
+  },
+  "mobility": [
+    {
+      "id": 0,
+      "parent": 1,
+      "joint": "hinge",
+      "name": "rotation_lid",
+      "parts": [
+        {
+          "id": 1,
+          "name": "rotation_lid"
+        }
+      ],
+      "jointData": {
+        "axis": {
+          "origin": [
+            0,
+            0.103,
+            -0.295
+          ],
+          "direction": [
+            1,
+            0,
+            0
+          ]
+        },
+        "limit": {
+          "a": 60,
+          "b": -125,
+          "noLimit": false
+        }
+      }
+    },
+    {
+      "id": 1,
+      "parent": -1,
+      "joint": "free",
+      "name": "base_body",
+      "parts": [
+        {
+          "id": 2,
+          "name": "base_body"
+        }
+      ],
+      "jointData": {}
+    }
+  ],
+  "urdf_structure": {
+    "robot_name": "partnet_952e325fe026ab9c48e2701b91d7249c",
+    "links": {
+      "base": {
+        "has_inertial": false,
+        "has_visual": false,
+        "has_collision": false,
+        "visual_meshes": [],
+        "collision_meshes": []
+      },
+      "link_0": {
+        "has_inertial": false,
+        "has_visual": true,
+        "has_collision": true,
+        "visual_meshes": [
+          {
+            "filename": "textured_objs/original_75.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_119.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_116.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_104.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_76.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_78.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_100.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_101.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_122.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_109.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_118.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_81.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_103.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_121.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_120.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_130.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_128.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_129.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_107.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_79.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_93.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_84.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_92.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_85.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_86.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_95.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_89.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_94.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_88.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_87.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_117.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_102.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_77.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_96.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_112.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_108.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_115.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_80.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_90.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_113.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_91.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_114.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_83.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_106.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_110.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_111.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_97.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_98.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_124.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_126.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_125.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_82.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_105.obj",
+            "scale": "1 1 1"
+          }
+        ],
+        "collision_meshes": [
+          {
+            "filename": "textured_objs/original_75.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_119.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_116.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_104.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_76.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_78.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_100.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_101.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_122.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_109.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_118.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_81.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_103.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_121.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_120.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_130.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_128.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_129.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_107.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_79.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_93.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_84.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_92.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_85.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_86.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_95.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_89.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_94.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_88.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_87.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_117.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_102.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_77.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_96.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_112.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_108.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_115.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_80.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_90.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_113.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_91.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_114.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_83.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_106.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_110.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_111.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_97.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_98.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_124.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_126.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_125.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_82.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_105.obj",
+            "scale": "1 1 1"
+          }
+        ]
+      },
+      "link_1": {
+        "has_inertial": false,
+        "has_visual": true,
+        "has_collision": true,
+        "visual_meshes": [
+          {
+            "filename": "textured_objs/original_30.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_36.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_41.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_28.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_64.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_43.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_71.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_52.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_22.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_4.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_3.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_65.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_33.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_44.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_16.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_8.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_13.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_9.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_45.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_49.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_61.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_39.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_59.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_5.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_54.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_27.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_51.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_55.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_50.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_6.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_31.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_37.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_48.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_15.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_56.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_72.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_62.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_23.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_66.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_58.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_67.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_11.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_38.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_68.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_34.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_18.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_70.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_25.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_17.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_12.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_42.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_24.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_20.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_32.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_47.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_53.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_7.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_10.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_14.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_19.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_40.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_46.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_57.obj",
+            "scale": "1 1 1"
+          }
+        ],
+        "collision_meshes": [
+          {
+            "filename": "textured_objs/original_30.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_36.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_41.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_28.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_64.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_43.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_71.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_52.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_22.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_4.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_3.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_65.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_33.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_44.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_16.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_8.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_13.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_9.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_45.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_49.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_61.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_39.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_59.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_5.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_54.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_27.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_51.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_55.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_50.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_6.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_31.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_37.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_48.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_15.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_56.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_72.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_62.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_23.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_66.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_58.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_67.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_11.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_38.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_68.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_34.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_18.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_70.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_25.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_17.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_12.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_42.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_24.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_20.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_32.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_47.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_53.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_7.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_10.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_14.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_19.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_40.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_46.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_57.obj",
+            "scale": "1 1 1"
+          }
+        ]
+      }
+    },
+    "joints": {
+      "joint_0": {
+        "type": "revolute",
+        "parent": "link_1",
+        "child": "link_0",
+        "axis": "-1 0 0",
+        "limits": {
+          "lower": -1.0471975511965976,
+          "upper": 2.181661564992912,
+          "effort": 0.0,
+          "velocity": 0.0
+        }
+      },
+      "joint_1": {
+        "type": "fixed",
+        "parent": "base",
+        "child": "link_1"
+      }
+    },
+    "materials": []
+  },
+  "mesh_analysis": {
+    "original_9.obj": {
+      "volume": null,
+      "surface_area": 0.0014034519797062157,
+      "bounds": [
+        [
+          -0.549257,
+          0.050354,
+          0.095859
+        ],
+        [
+          -0.543954,
+          0.071566,
+          0.11707
+        ]
+      ],
+      "dimensions": [
+        0.005302999999999947,
+        0.021212,
+        0.021210999999999994
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_64.obj": {
+      "volume": null,
+      "surface_area": 0.06416758134442496,
+      "bounds": [
+        [
+          0.540527,
+          -0.188301,
+          0.201528
+        ],
+        [
+          0.574089,
+          0.018511,
+          0.26092
+        ]
+      ],
+      "dimensions": [
+        0.03356199999999998,
+        0.206812,
+        0.05939199999999997
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 192,
+      "num_faces": 128
+    },
+    "original_117.obj": {
+      "volume": null,
+      "surface_area": 0.13415474066578822,
+      "bounds": [
+        [
+          0.462408,
+          0.119581,
+          -0.444703
+        ],
+        [
+          0.549,
+          0.287373,
+          -0.240672
+        ]
+      ],
+      "dimensions": [
+        0.08659200000000006,
+        0.167792,
+        0.20403100000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 72,
+      "num_faces": 40
+    },
+    "original_110.obj": {
+      "volume": null,
+      "surface_area": 0.0014033987675594896,
+      "bounds": [
+        [
+          -0.165865,
+          0.121971,
+          -0.333473
+        ],
+        [
+          -0.144653,
+          0.137169,
+          -0.312452
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.015198000000000017,
+        0.021021000000000012
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_97.obj": {
+      "volume": null,
+      "surface_area": 0.001403390087152153,
+      "bounds": [
+        [
+          0.157895,
+          0.184973,
+          -0.442596
+        ],
+        [
+          0.179107,
+          0.200171,
+          -0.421575
+        ]
+      ],
+      "dimensions": [
+        0.02121199999999998,
+        0.01519799999999999,
+        0.021021000000000012
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_23.obj": {
+      "volume": null,
+      "surface_area": 0.002629166497006133,
+      "bounds": [
+        [
+          0.314472,
+          0.029894,
+          -0.288599
+        ],
+        [
+          0.346289,
+          0.061711,
+          -0.283296
+        ]
+      ],
+      "dimensions": [
+        0.03181700000000004,
+        0.031817,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_49.obj": {
+      "volume": null,
+      "surface_area": 0.0014034268523193862,
+      "bounds": [
+        [
+          0.157895,
+          -0.508214,
+          -0.23499
+        ],
+        [
+          0.179107,
+          -0.502911,
+          -0.213778
+        ]
+      ],
+      "dimensions": [
+        0.02121199999999998,
+        0.005303000000000058,
+        0.02121200000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_13.obj": {
+      "volume": null,
+      "surface_area": 0.0014034645135841933,
+      "bounds": [
+        [
+          0.069148,
+          0.050354,
+          0.490923
+        ],
+        [
+          0.09036,
+          0.071566,
+          0.496226
+        ]
+      ],
+      "dimensions": [
+        0.021211999999999995,
+        0.021212,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_32.obj": {
+      "volume": null,
+      "surface_area": 0.0005528523584757727,
+      "bounds": [
+        [
+          -0.534159,
+          -0.141935,
+          0.224082
+        ],
+        [
+          -0.531522,
+          -0.12765,
+          0.238367
+        ]
+      ],
+      "dimensions": [
+        0.0026370000000000005,
+        0.014284999999999992,
+        0.014284999999999992
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_56.obj": {
+      "volume": null,
+      "surface_area": 0.00285771696281334,
+      "bounds": [
+        [
+          0.488947,
+          -0.51245,
+          0.426911
+        ],
+        [
+          0.522461,
+          -0.507147,
+          0.460425
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999993,
+        0.005302999999999947,
+        0.03351399999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_85.obj": {
+      "volume": null,
+      "surface_area": 0.0014034743677806662,
+      "bounds": [
+        [
+          -0.165865,
+          0.827576,
+          -0.113359
+        ],
+        [
+          -0.144653,
+          0.848597,
+          -0.098161
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.021021000000000067,
+        0.015198000000000003
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_70.obj": {
+      "volume": null,
+      "surface_area": 0.09048230852423131,
+      "bounds": [
+        [
+          -0.364972,
+          -0.084457,
+          -0.309811
+        ],
+        [
+          -0.269306,
+          0.118284,
+          -0.277993
+        ]
+      ],
+      "dimensions": [
+        0.09566600000000003,
+        0.202741,
+        0.03181800000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 556,
+      "num_faces": 384
+    },
+    "original_17.obj": {
+      "volume": null,
+      "surface_area": 0.41334234516399987,
+      "bounds": [
+        [
+          -0.535759,
+          -0.486243,
+          -0.274035
+        ],
+        [
+          -0.449166,
+          0.102376,
+          -0.187443
+        ]
+      ],
+      "dimensions": [
+        0.08659299999999998,
+        0.588619,
+        0.08659199999999997
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 72,
+      "num_faces": 40
+    },
+    "original_36.obj": {
+      "volume": null,
+      "surface_area": 2.6110490558088104,
+      "bounds": [
+        [
+          -0.549257,
+          -0.507147,
+          -0.286466
+        ],
+        [
+          0.561432,
+          -0.427911,
+          0.499396
+        ]
+      ],
+      "dimensions": [
+        1.110689,
+        0.07923600000000003,
+        0.7858620000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 1976,
+      "num_faces": 1208
+    },
+    "original_128.obj": {
+      "volume": null,
+      "surface_area": 0.09914710053750672,
+      "bounds": [
+        [
+          -0.373392,
+          0.086467,
+          -0.4504
+        ],
+        [
+          -0.260886,
+          0.209569,
+          -0.277993
+        ]
+      ],
+      "dimensions": [
+        0.112506,
+        0.123102,
+        0.17240700000000003
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 918,
+      "num_faces": 718
+    },
+    "original_109.obj": {
+      "volume": null,
+      "surface_area": 0.0014034397404493722,
+      "bounds": [
+        [
+          -0.549257,
+          0.45788,
+          -0.137895
+        ],
+        [
+          -0.543954,
+          0.479091,
+          -0.116684
+        ]
+      ],
+      "dimensions": [
+        0.005302999999999947,
+        0.02121099999999998,
+        0.021210999999999994
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_82.obj": {
+      "volume": null,
+      "surface_area": 0.002857688756391144,
+      "bounds": [
+        [
+          0.488947,
+          0.179288,
+          -0.451876
+        ],
+        [
+          0.522461,
+          0.200637,
+          -0.420201
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999993,
+        0.021349000000000007,
+        0.03167500000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_39.obj": {
+      "volume": null,
+      "surface_area": 0.002857777533478726,
+      "bounds": [
+        [
+          -0.509219,
+          -0.484286,
+          0.499396
+        ],
+        [
+          -0.475705,
+          -0.450772,
+          0.504699
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999999,
+        0.03351399999999999,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_16.obj": {
+      "volume": null,
+      "surface_area": 0.4133399567960001,
+      "bounds": [
+        [
+          0.462408,
+          -0.486243,
+          -0.274035
+        ],
+        [
+          0.549,
+          0.102376,
+          -0.187443
+        ]
+      ],
+      "dimensions": [
+        0.08659200000000006,
+        0.588619,
+        0.08659199999999997
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 72,
+      "num_faces": 40
+    },
+    "original_3.obj": {
+      "volume": null,
+      "surface_area": 1.7282333655230104,
+      "bounds": [
+        [
+          -0.553493,
+          -0.107724,
+          -0.291769
+        ],
+        [
+          0.566735,
+          0.102376,
+          0.504699
+        ]
+      ],
+      "dimensions": [
+        1.120228,
+        0.2101,
+        0.796468
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 3756,
+      "num_faces": 2512
+    },
+    "original_12.obj": {
+      "volume": null,
+      "surface_area": 0.001403446347188453,
+      "bounds": [
+        [
+          -0.074029,
+          0.050354,
+          0.490923
+        ],
+        [
+          -0.052818,
+          0.071566,
+          0.496226
+        ]
+      ],
+      "dimensions": [
+        0.021211,
+        0.021212,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_125.obj": {
+      "volume": null,
+      "surface_area": 0.002629173037222658,
+      "bounds": [
+        [
+          0.314472,
+          0.130871,
+          -0.360207
+        ],
+        [
+          0.346289,
+          0.151372,
+          -0.33
+        ]
+      ],
+      "dimensions": [
+        0.03181700000000004,
+        0.02050100000000002,
+        0.030206999999999984
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_15.obj": {
+      "volume": null,
+      "surface_area": 0.4133423451639999,
+      "bounds": [
+        [
+          -0.535759,
+          -0.486243,
+          0.400372
+        ],
+        [
+          -0.449166,
+          0.102376,
+          0.486964
+        ]
+      ],
+      "dimensions": [
+        0.08659299999999998,
+        0.588619,
+        0.086592
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 72,
+      "num_faces": 40
+    },
+    "original_22.obj": {
+      "volume": null,
+      "surface_area": 0.09048230852423127,
+      "bounds": [
+        [
+          0.282548,
+          -0.084457,
+          -0.309811
+        ],
+        [
+          0.378214,
+          0.118284,
+          -0.277993
+        ]
+      ],
+      "dimensions": [
+        0.09566599999999997,
+        0.202741,
+        0.03181800000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 556,
+      "num_faces": 384
+    },
+    "original_62.obj": {
+      "volume": null,
+      "surface_area": 0.048821507460836855,
+      "bounds": [
+        [
+          0.5447,
+          -0.139366,
+          -0.047992
+        ],
+        [
+          0.589266,
+          -0.075675,
+          0.26092
+        ]
+      ],
+      "dimensions": [
+        0.044565999999999995,
+        0.06369099999999998,
+        0.30891199999999996
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 1056,
+      "num_faces": 568
+    },
+    "original_71.obj": {
+      "volume": null,
+      "surface_area": 0.0026291395463859824,
+      "bounds": [
+        [
+          -0.333048,
+          0.029894,
+          -0.288599
+        ],
+        [
+          -0.301231,
+          0.061711,
+          -0.283296
+        ]
+      ],
+      "dimensions": [
+        0.031816999999999984,
+        0.031817,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_68.obj": {
+      "volume": null,
+      "surface_area": 0.0005528523584757727,
+      "bounds": [
+        [
+          0.544764,
+          -0.014666,
+          0.224082
+        ],
+        [
+          0.547401,
+          -0.000381,
+          0.238367
+        ]
+      ],
+      "dimensions": [
+        0.0026370000000000005,
+        0.014285,
+        0.014284999999999992
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_20.obj": {
+      "volume": null,
+      "surface_area": 0.5601252836919999,
+      "bounds": [
+        [
+          -0.189348,
+          -0.490479,
+          -0.269798
+        ],
+        [
+          -0.12117,
+          0.102376,
+          0.482728
+        ]
+      ],
+      "dimensions": [
+        0.06817799999999999,
+        0.592855,
+        0.752526
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 112,
+      "num_faces": 72
+    },
+    "original_10.obj": {
+      "volume": null,
+      "surface_area": 0.0014034398576877362,
+      "bounds": [
+        [
+          -0.074029,
+          -0.08752,
+          0.490923
+        ],
+        [
+          -0.052818,
+          -0.066309,
+          0.496226
+        ]
+      ],
+      "dimensions": [
+        0.021211,
+        0.021210999999999994,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_34.obj": {
+      "volume": null,
+      "surface_area": 0.0005528523584757727,
+      "bounds": [
+        [
+          -0.534159,
+          -0.014666,
+          0.224082
+        ],
+        [
+          -0.531522,
+          -0.000381,
+          0.238367
+        ]
+      ],
+      "dimensions": [
+        0.0026370000000000005,
+        0.014285,
+        0.014284999999999992
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_33.obj": {
+      "volume": null,
+      "surface_area": 0.0005528523584757727,
+      "bounds": [
+        [
+          -0.534159,
+          -0.173752,
+          0.224082
+        ],
+        [
+          -0.531522,
+          -0.159467,
+          0.238367
+        ]
+      ],
+      "dimensions": [
+        0.0026370000000000005,
+        0.014284999999999992,
+        0.014284999999999992
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_111.obj": {
+      "volume": null,
+      "surface_area": 0.0014033844638941988,
+      "bounds": [
+        [
+          0.157895,
+          0.121971,
+          -0.333473
+        ],
+        [
+          0.179107,
+          0.137169,
+          -0.312452
+        ]
+      ],
+      "dimensions": [
+        0.02121199999999998,
+        0.015198000000000017,
+        0.021021000000000012
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_57.obj": {
+      "volume": null,
+      "surface_area": 0.0014034360280357487,
+      "bounds": [
+        [
+          0.557195,
+          -0.476017,
+          0.095859
+        ],
+        [
+          0.562498,
+          -0.454805,
+          0.11707
+        ]
+      ],
+      "dimensions": [
+        0.005303000000000058,
+        0.02121200000000001,
+        0.021210999999999994
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_8.obj": {
+      "volume": null,
+      "surface_area": 0.0014034671398528778,
+      "bounds": [
+        [
+          -0.165865,
+          0.050354,
+          -0.287533
+        ],
+        [
+          -0.144653,
+          0.071566,
+          -0.28223
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.021212,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_126.obj": {
+      "volume": null,
+      "surface_area": 0.0026291399887546163,
+      "bounds": [
+        [
+          0.314472,
+          0.170643,
+          -0.429093
+        ],
+        [
+          0.346289,
+          0.191144,
+          -0.398887
+        ]
+      ],
+      "dimensions": [
+        0.03181700000000004,
+        0.02050100000000002,
+        0.03020600000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_81.obj": {
+      "volume": null,
+      "surface_area": 0.0028577390704859797,
+      "bounds": [
+        [
+          -0.553493,
+          0.223763,
+          -0.423606
+        ],
+        [
+          -0.54819,
+          0.257277,
+          -0.390091
+        ]
+      ],
+      "dimensions": [
+        0.005303000000000058,
+        0.03351399999999999,
+        0.03351499999999996
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_105.obj": {
+      "volume": null,
+      "surface_area": 0.0028577304072019702,
+      "bounds": [
+        [
+          0.488947,
+          0.115226,
+          -0.340918
+        ],
+        [
+          0.522461,
+          0.136576,
+          -0.309243
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999993,
+        0.021350000000000008,
+        0.03167500000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_41.obj": {
+      "volume": null,
+      "surface_area": 0.0028577415260707256,
+      "bounds": [
+        [
+          0.561432,
+          -0.484286,
+          0.426911
+        ],
+        [
+          0.566735,
+          -0.450772,
+          0.460425
+        ]
+      ],
+      "dimensions": [
+        0.005302999999999947,
+        0.03351399999999999,
+        0.03351399999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_18.obj": {
+      "volume": null,
+      "surface_area": 11.007605941477147,
+      "bounds": [
+        [
+          -0.527286,
+          -0.486243,
+          -0.265562
+        ],
+        [
+          0.540527,
+          0.102376,
+          0.478491
+        ]
+      ],
+      "dimensions": [
+        1.0678130000000001,
+        0.588619,
+        0.7440530000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 280,
+      "num_faces": 224
+    },
+    "original_48.obj": {
+      "volume": null,
+      "surface_area": 0.0014034411584368973,
+      "bounds": [
+        [
+          -0.165865,
+          -0.508214,
+          -0.23499
+        ],
+        [
+          -0.144653,
+          -0.502911,
+          -0.213778
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.005303000000000058,
+        0.02121200000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_107.obj": {
+      "volume": null,
+      "surface_area": 0.002857754973102227,
+      "bounds": [
+        [
+          -0.509219,
+          0.115226,
+          -0.340918
+        ],
+        [
+          -0.475705,
+          0.136576,
+          -0.309243
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999999,
+        0.021350000000000008,
+        0.03167500000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_79.obj": {
+      "volume": null,
+      "surface_area": 0.0028577133207451358,
+      "bounds": [
+        [
+          -0.509219,
+          0.179288,
+          -0.451876
+        ],
+        [
+          -0.475705,
+          0.200637,
+          -0.420201
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999999,
+        0.021349000000000007,
+        0.03167500000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_115.obj": {
+      "volume": null,
+      "surface_area": 0.13415418152450245,
+      "bounds": [
+        [
+          0.462408,
+          0.703635,
+          -0.1075
+        ],
+        [
+          0.549,
+          0.871426,
+          0.096531
+        ]
+      ],
+      "dimensions": [
+        0.08659200000000006,
+        0.16779100000000002,
+        0.20403100000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 72,
+      "num_faces": 40
+    },
+    "original_19.obj": {
+      "volume": null,
+      "surface_area": 0.5601252836919999,
+      "bounds": [
+        [
+          0.134412,
+          -0.490479,
+          -0.269798
+        ],
+        [
+          0.20259,
+          0.102376,
+          0.482728
+        ]
+      ],
+      "dimensions": [
+        0.06817799999999999,
+        0.592855,
+        0.752526
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 96,
+      "num_faces": 56
+    },
+    "original_50.obj": {
+      "volume": null,
+      "surface_area": 0.0014034168803796782,
+      "bounds": [
+        [
+          0.488744,
+          -0.508214,
+          0.095859
+        ],
+        [
+          0.509955,
+          -0.502911,
+          0.11707
+        ]
+      ],
+      "dimensions": [
+        0.021211000000000035,
+        0.005303000000000058,
+        0.021210999999999994
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_86.obj": {
+      "volume": null,
+      "surface_area": 0.001403460062907314,
+      "bounds": [
+        [
+          0.157895,
+          0.827576,
+          -0.113359
+        ],
+        [
+          0.179107,
+          0.848597,
+          -0.098161
+        ]
+      ],
+      "dimensions": [
+        0.02121199999999998,
+        0.021021000000000067,
+        0.015198000000000003
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_75.obj": {
+      "volume": null,
+      "surface_area": 2.6110413970304114,
+      "bounds": [
+        [
+          -0.549257,
+          0.17245,
+          -0.469022
+        ],
+        [
+          0.561432,
+          0.892644,
+          -0.007471
+        ]
+      ],
+      "dimensions": [
+        1.110689,
+        0.720194,
+        0.461551
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 1976,
+      "num_faces": 1208
+    },
+    "original_72.obj": {
+      "volume": null,
+      "surface_area": 0.0026291551051078827,
+      "bounds": [
+        [
+          -0.333048,
+          -0.049649,
+          -0.288599
+        ],
+        [
+          -0.301231,
+          -0.017832,
+          -0.283296
+        ]
+      ],
+      "dimensions": [
+        0.031816999999999984,
+        0.031817,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_83.obj": {
+      "volume": null,
+      "surface_area": 0.0028576844286595346,
+      "bounds": [
+        [
+          0.488947,
+          0.864457,
+          -0.056294
+        ],
+        [
+          0.522461,
+          0.885806,
+          -0.024618
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999993,
+        0.02134899999999995,
+        0.031675999999999996
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_124.obj": {
+      "volume": null,
+      "surface_area": 0.09914696764133404,
+      "bounds": [
+        [
+          0.274128,
+          0.086467,
+          -0.4504
+        ],
+        [
+          0.386633,
+          0.209569,
+          -0.277993
+        ]
+      ],
+      "dimensions": [
+        0.11250500000000002,
+        0.123102,
+        0.17240700000000003
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 918,
+      "num_faces": 718
+    },
+    "original_6.obj": {
+      "volume": null,
+      "surface_area": 0.001403451979706231,
+      "bounds": [
+        [
+          0.557195,
+          0.050354,
+          0.095859
+        ],
+        [
+          0.562498,
+          0.071566,
+          0.11707
+        ]
+      ],
+      "dimensions": [
+        0.005303000000000058,
+        0.021212,
+        0.021210999999999994
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_59.obj": {
+      "volume": null,
+      "surface_area": 0.001403451186332477,
+      "bounds": [
+        [
+          -0.165865,
+          -0.476017,
+          -0.287533
+        ],
+        [
+          -0.144653,
+          -0.454805,
+          -0.28223
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.02121200000000001,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_130.obj": {
+      "volume": null,
+      "surface_area": 0.002629113037554448,
+      "bounds": [
+        [
+          -0.333048,
+          0.170643,
+          -0.429093
+        ],
+        [
+          -0.301231,
+          0.191144,
+          -0.398887
+        ]
+      ],
+      "dimensions": [
+        0.031816999999999984,
+        0.02050100000000002,
+        0.03020600000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_4.obj": {
+      "volume": null,
+      "surface_area": 0.001403452834585475,
+      "bounds": [
+        [
+          0.157895,
+          0.050354,
+          0.495159
+        ],
+        [
+          0.179107,
+          0.071566,
+          0.500462
+        ]
+      ],
+      "dimensions": [
+        0.02121199999999998,
+        0.021212,
+        0.005302999999999947
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_66.obj": {
+      "volume": null,
+      "surface_area": 0.0005528523584757727,
+      "bounds": [
+        [
+          0.544764,
+          -0.141935,
+          0.224082
+        ],
+        [
+          0.547401,
+          -0.12765,
+          0.238367
+        ]
+      ],
+      "dimensions": [
+        0.0026370000000000005,
+        0.014284999999999992,
+        0.014284999999999992
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_38.obj": {
+      "volume": null,
+      "surface_area": 0.002857752970599774,
+      "bounds": [
+        [
+          0.561432,
+          -0.484286,
+          -0.247496
+        ],
+        [
+          0.566735,
+          -0.450772,
+          -0.213981
+        ]
+      ],
+      "dimensions": [
+        0.005302999999999947,
+        0.03351399999999999,
+        0.03351499999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_67.obj": {
+      "volume": null,
+      "surface_area": 0.0005528523584757727,
+      "bounds": [
+        [
+          0.544764,
+          -0.173752,
+          0.224082
+        ],
+        [
+          0.547401,
+          -0.159467,
+          0.238367
+        ]
+      ],
+      "dimensions": [
+        0.0026370000000000005,
+        0.014284999999999992,
+        0.014284999999999992
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_46.obj": {
+      "volume": null,
+      "surface_area": 0.0014034463434394679,
+      "bounds": [
+        [
+          -0.165865,
+          -0.508214,
+          0.426708
+        ],
+        [
+          -0.144653,
+          -0.502911,
+          0.447919
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.005303000000000058,
+        0.021211000000000035
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_116.obj": {
+      "volume": null,
+      "surface_area": 0.13415495781698916,
+      "bounds": [
+        [
+          -0.535759,
+          0.703635,
+          -0.1075
+        ],
+        [
+          -0.449166,
+          0.871426,
+          0.096531
+        ]
+      ],
+      "dimensions": [
+        0.08659299999999998,
+        0.16779100000000002,
+        0.20403100000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 72,
+      "num_faces": 40
+    },
+    "original_106.obj": {
+      "volume": null,
+      "surface_area": 0.002857694069201607,
+      "bounds": [
+        [
+          0.488947,
+          0.800395,
+          0.054664
+        ],
+        [
+          0.522461,
+          0.821745,
+          0.08634
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999993,
+        0.02134999999999998,
+        0.031676
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_92.obj": {
+      "volume": null,
+      "surface_area": 0.00285779654896862,
+      "bounds": [
+        [
+          -0.509219,
+          0.829871,
+          -0.116927
+        ],
+        [
+          -0.475705,
+          0.861546,
+          -0.095577
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999999,
+        0.03167500000000001,
+        0.021350000000000008
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_114.obj": {
+      "volume": null,
+      "surface_area": 0.0014034441283827708,
+      "bounds": [
+        [
+          0.157895,
+          0.799802,
+          0.057873
+        ],
+        [
+          0.179107,
+          0.815,
+          0.078894
+        ]
+      ],
+      "dimensions": [
+        0.02121199999999998,
+        0.015197999999999934,
+        0.021021000000000005
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_43.obj": {
+      "volume": null,
+      "surface_area": 0.0028577529710194366,
+      "bounds": [
+        [
+          0.488947,
+          -0.484286,
+          -0.291769
+        ],
+        [
+          0.522461,
+          -0.450772,
+          -0.286466
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999993,
+        0.03351399999999999,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_119.obj": {
+      "volume": null,
+      "surface_area": 5.403590089126782,
+      "bounds": [
+        [
+          -0.527286,
+          0.126919,
+          -0.440467
+        ],
+        [
+          0.540527,
+          0.864088,
+          0.092294
+        ]
+      ],
+      "dimensions": [
+        1.0678130000000001,
+        0.737169,
+        0.532761
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 96,
+      "num_faces": 56
+    },
+    "original_80.obj": {
+      "volume": null,
+      "surface_area": 0.0028577253475762726,
+      "bounds": [
+        [
+          0.561432,
+          0.807817,
+          -0.086402
+        ],
+        [
+          0.566735,
+          0.841331,
+          -0.052888
+        ]
+      ],
+      "dimensions": [
+        0.005302999999999947,
+        0.033514000000000044,
+        0.03351400000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_89.obj": {
+      "volume": null,
+      "surface_area": 0.0014033835220150438,
+      "bounds": [
+        [
+          0.488744,
+          0.541053,
+          -0.278784
+        ],
+        [
+          0.509955,
+          0.562074,
+          -0.263586
+        ]
+      ],
+      "dimensions": [
+        0.021211000000000035,
+        0.021020999999999956,
+        0.01519799999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_76.obj": {
+      "volume": null,
+      "surface_area": 0.002857725347576296,
+      "bounds": [
+        [
+          -0.553493,
+          0.807817,
+          -0.086402
+        ],
+        [
+          -0.54819,
+          0.841331,
+          -0.052888
+        ]
+      ],
+      "dimensions": [
+        0.005303000000000058,
+        0.033514000000000044,
+        0.03351400000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_98.obj": {
+      "volume": null,
+      "surface_area": 0.0014034043933572608,
+      "bounds": [
+        [
+          -0.165865,
+          0.184973,
+          -0.442596
+        ],
+        [
+          -0.144653,
+          0.200171,
+          -0.421575
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.01519799999999999,
+        0.021021000000000012
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_54.obj": {
+      "volume": null,
+      "surface_area": 0.0028577529705997706,
+      "bounds": [
+        [
+          -0.509219,
+          -0.51245,
+          -0.247496
+        ],
+        [
+          -0.475705,
+          -0.507147,
+          -0.213981
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999999,
+        0.005302999999999947,
+        0.03351499999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_93.obj": {
+      "volume": null,
+      "surface_area": 0.0028576953202407206,
+      "bounds": [
+        [
+          -0.509219,
+          0.245817,
+          -0.45413
+        ],
+        [
+          -0.475705,
+          0.277493,
+          -0.432781
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999999,
+        0.03167599999999998,
+        0.02134899999999995
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_102.obj": {
+      "volume": null,
+      "surface_area": 0.002857725343354703,
+      "bounds": [
+        [
+          0.561432,
+          0.159702,
+          -0.312648
+        ],
+        [
+          0.566735,
+          0.193216,
+          -0.279134
+        ]
+      ],
+      "dimensions": [
+        0.005302999999999947,
+        0.03351399999999999,
+        0.03351399999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_11.obj": {
+      "volume": null,
+      "surface_area": 0.0014034580261384003,
+      "bounds": [
+        [
+          0.069148,
+          -0.08752,
+          0.490923
+        ],
+        [
+          0.09036,
+          -0.066309,
+          0.496226
+        ]
+      ],
+      "dimensions": [
+        0.021211999999999995,
+        0.021210999999999994,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_51.obj": {
+      "volume": null,
+      "surface_area": 0.0014034511863324696,
+      "bounds": [
+        [
+          -0.165865,
+          -0.476017,
+          0.495159
+        ],
+        [
+          -0.144653,
+          -0.454805,
+          0.500462
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.02121200000000001,
+        0.005302999999999947
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_78.obj": {
+      "volume": null,
+      "surface_area": 0.00285770899419813,
+      "bounds": [
+        [
+          -0.509219,
+          0.864457,
+          -0.056294
+        ],
+        [
+          -0.475705,
+          0.885806,
+          -0.024618
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999999,
+        0.02134899999999995,
+        0.031675999999999996
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_65.obj": {
+      "volume": null,
+      "surface_area": 0.0005528472839049225,
+      "bounds": [
+        [
+          0.544764,
+          -0.046483,
+          0.224082
+        ],
+        [
+          0.547401,
+          -0.032199,
+          0.238367
+        ]
+      ],
+      "dimensions": [
+        0.0026370000000000005,
+        0.014283999999999998,
+        0.014284999999999992
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_84.obj": {
+      "volume": null,
+      "surface_area": 0.00140340266991162,
+      "bounds": [
+        [
+          -0.496714,
+          0.541053,
+          -0.278784
+        ],
+        [
+          -0.475502,
+          0.562074,
+          -0.263586
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.021020999999999956,
+        0.01519799999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_53.obj": {
+      "volume": null,
+      "surface_area": 0.0028577415260707226,
+      "bounds": [
+        [
+          -0.509219,
+          -0.51245,
+          0.426911
+        ],
+        [
+          -0.475705,
+          -0.507147,
+          0.460425
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999999,
+        0.005302999999999947,
+        0.03351399999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_45.obj": {
+      "volume": null,
+      "surface_area": 0.0014034360280357487,
+      "bounds": [
+        [
+          -0.496714,
+          -0.508214,
+          0.095859
+        ],
+        [
+          -0.475502,
+          -0.502911,
+          0.11707
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.005303000000000058,
+        0.021210999999999994
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_42.obj": {
+      "volume": null,
+      "surface_area": 0.0028577529705997966,
+      "bounds": [
+        [
+          -0.553493,
+          -0.484286,
+          -0.247496
+        ],
+        [
+          -0.54819,
+          -0.450772,
+          -0.213981
+        ]
+      ],
+      "dimensions": [
+        0.005303000000000058,
+        0.03351399999999999,
+        0.03351499999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_24.obj": {
+      "volume": null,
+      "surface_area": 0.0026291820557280323,
+      "bounds": [
+        [
+          0.314472,
+          -0.049649,
+          -0.288599
+        ],
+        [
+          0.346289,
+          -0.017832,
+          -0.283296
+        ]
+      ],
+      "dimensions": [
+        0.03181700000000004,
+        0.031817,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_88.obj": {
+      "volume": null,
+      "surface_area": 0.0014034444882806353,
+      "bounds": [
+        [
+          0.157895,
+          0.254529,
+          -0.444208
+        ],
+        [
+          0.179107,
+          0.27555,
+          -0.42901
+        ]
+      ],
+      "dimensions": [
+        0.02121199999999998,
+        0.021021000000000012,
+        0.01519799999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_5.obj": {
+      "volume": null,
+      "surface_area": 0.0014034671398528704,
+      "bounds": [
+        [
+          -0.165865,
+          0.050354,
+          0.495159
+        ],
+        [
+          -0.144653,
+          0.071566,
+          0.500462
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.021212,
+        0.005302999999999947
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_31.obj": {
+      "volume": null,
+      "surface_area": 0.0005528472839049224,
+      "bounds": [
+        [
+          -0.534159,
+          -0.046483,
+          0.224082
+        ],
+        [
+          -0.531522,
+          -0.032199,
+          0.238367
+        ]
+      ],
+      "dimensions": [
+        0.0026370000000000005,
+        0.014283999999999998,
+        0.014284999999999992
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_91.obj": {
+      "volume": null,
+      "surface_area": 0.0014034236119632249,
+      "bounds": [
+        [
+          0.157895,
+          0.862804,
+          -0.05125
+        ],
+        [
+          0.179107,
+          0.878002,
+          -0.030229
+        ]
+      ],
+      "dimensions": [
+        0.02121199999999998,
+        0.015197999999999934,
+        0.021020999999999998
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_120.obj": {
+      "volume": null,
+      "surface_area": 0.32665225632043104,
+      "bounds": [
+        [
+          0.134412,
+          0.12325,
+          -0.446254
+        ],
+        [
+          0.20259,
+          0.869875,
+          0.094413
+        ]
+      ],
+      "dimensions": [
+        0.06817799999999999,
+        0.746625,
+        0.540667
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 96,
+      "num_faces": 56
+    },
+    "original_101.obj": {
+      "volume": null,
+      "surface_area": 0.00285771862998753,
+      "bounds": [
+        [
+          -0.509219,
+          0.800395,
+          0.054664
+        ],
+        [
+          -0.475705,
+          0.821745,
+          0.08634
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999999,
+        0.02134999999999998,
+        0.031676
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_30.obj": {
+      "volume": null,
+      "surface_area": 0.06416651652842492,
+      "bounds": [
+        [
+          -0.560847,
+          -0.188301,
+          0.201528
+        ],
+        [
+          -0.527286,
+          0.018511,
+          0.26092
+        ]
+      ],
+      "dimensions": [
+        0.03356099999999995,
+        0.206812,
+        0.05939199999999997
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 192,
+      "num_faces": 128
+    },
+    "original_28.obj": {
+      "volume": null,
+      "surface_area": 0.048821295145499446,
+      "bounds": [
+        [
+          -0.576024,
+          -0.139366,
+          -0.047992
+        ],
+        [
+          -0.531458,
+          -0.075675,
+          0.26092
+        ]
+      ],
+      "dimensions": [
+        0.044565999999999995,
+        0.06369099999999998,
+        0.30891199999999996
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 1056,
+      "num_faces": 568
+    },
+    "original_55.obj": {
+      "volume": null,
+      "surface_area": 0.002857728408028285,
+      "bounds": [
+        [
+          0.488947,
+          -0.51245,
+          -0.247496
+        ],
+        [
+          0.522461,
+          -0.507147,
+          -0.213981
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999993,
+        0.005302999999999947,
+        0.03351499999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_112.obj": {
+      "volume": null,
+      "surface_area": 0.0014034397404493865,
+      "bounds": [
+        [
+          0.557195,
+          0.45788,
+          -0.137895
+        ],
+        [
+          0.562498,
+          0.479091,
+          -0.116684
+        ]
+      ],
+      "dimensions": [
+        0.005303000000000058,
+        0.02121099999999998,
+        0.021210999999999994
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_108.obj": {
+      "volume": null,
+      "surface_area": 0.002857716965333136,
+      "bounds": [
+        [
+          0.561432,
+          0.743755,
+          0.024555
+        ],
+        [
+          0.566735,
+          0.777269,
+          0.05807
+        ]
+      ],
+      "dimensions": [
+        0.005302999999999947,
+        0.03351399999999993,
+        0.033514999999999996
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_27.obj": {
+      "volume": null,
+      "surface_area": 0.06511105758066185,
+      "bounds": [
+        [
+          -0.560847,
+          -0.188301,
+          -0.047992
+        ],
+        [
+          -0.527286,
+          0.018511,
+          0.011401
+        ]
+      ],
+      "dimensions": [
+        0.03356099999999995,
+        0.206812,
+        0.059393
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 1344,
+      "num_faces": 896
+    },
+    "original_103.obj": {
+      "volume": null,
+      "surface_area": 0.002857725343354727,
+      "bounds": [
+        [
+          -0.553493,
+          0.159702,
+          -0.312648
+        ],
+        [
+          -0.54819,
+          0.193216,
+          -0.279134
+        ]
+      ],
+      "dimensions": [
+        0.005303000000000058,
+        0.03351399999999999,
+        0.03351399999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_37.obj": {
+      "volume": null,
+      "surface_area": 0.002857741526070748,
+      "bounds": [
+        [
+          -0.553493,
+          -0.484286,
+          0.426911
+        ],
+        [
+          -0.54819,
+          -0.450772,
+          0.460425
+        ]
+      ],
+      "dimensions": [
+        0.005303000000000058,
+        0.03351399999999999,
+        0.03351399999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_94.obj": {
+      "volume": null,
+      "surface_area": 0.002857670758342642,
+      "bounds": [
+        [
+          0.488947,
+          0.245817,
+          -0.45413
+        ],
+        [
+          0.522461,
+          0.277493,
+          -0.432781
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999993,
+        0.03167599999999998,
+        0.02134899999999995
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_52.obj": {
+      "volume": null,
+      "surface_area": 0.0014034368810650743,
+      "bounds": [
+        [
+          0.157895,
+          -0.476017,
+          0.495159
+        ],
+        [
+          0.179107,
+          -0.454805,
+          0.500462
+        ]
+      ],
+      "dimensions": [
+        0.02121199999999998,
+        0.02121200000000001,
+        0.005302999999999947
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_44.obj": {
+      "volume": null,
+      "surface_area": 0.002857752971019436,
+      "bounds": [
+        [
+          0.488947,
+          -0.484286,
+          0.499396
+        ],
+        [
+          0.522461,
+          -0.450772,
+          0.504699
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999993,
+        0.03351399999999999,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_90.obj": {
+      "volume": null,
+      "surface_area": 0.001403437918036514,
+      "bounds": [
+        [
+          -0.165865,
+          0.862804,
+          -0.05125
+        ],
+        [
+          -0.144653,
+          0.878002,
+          -0.030229
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.015197999999999934,
+        0.021020999999999998
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_95.obj": {
+      "volume": null,
+      "surface_area": 0.002857771984445311,
+      "bounds": [
+        [
+          0.488947,
+          0.829871,
+          -0.116927
+        ],
+        [
+          0.522461,
+          0.861546,
+          -0.095577
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999993,
+        0.03167500000000001,
+        0.021350000000000008
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_40.obj": {
+      "volume": null,
+      "surface_area": 0.002857777533478726,
+      "bounds": [
+        [
+          -0.509219,
+          -0.484286,
+          -0.291769
+        ],
+        [
+          -0.475705,
+          -0.450772,
+          -0.286466
+        ]
+      ],
+      "dimensions": [
+        0.03351399999999999,
+        0.03351399999999999,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_96.obj": {
+      "volume": null,
+      "surface_area": 0.0014034481194560241,
+      "bounds": [
+        [
+          0.557195,
+          0.520882,
+          -0.247018
+        ],
+        [
+          0.562498,
+          0.542093,
+          -0.225807
+        ]
+      ],
+      "dimensions": [
+        0.005303000000000058,
+        0.02121100000000009,
+        0.02121099999999998
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_61.obj": {
+      "volume": null,
+      "surface_area": 0.06511212240066187,
+      "bounds": [
+        [
+          0.540527,
+          -0.188301,
+          -0.047992
+        ],
+        [
+          0.574089,
+          0.018511,
+          0.011401
+        ]
+      ],
+      "dimensions": [
+        0.03356199999999998,
+        0.206812,
+        0.059393
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 1344,
+      "num_faces": 896
+    },
+    "original_58.obj": {
+      "volume": null,
+      "surface_area": 0.0014034368810650817,
+      "bounds": [
+        [
+          0.157895,
+          -0.476017,
+          -0.287533
+        ],
+        [
+          0.179107,
+          -0.454805,
+          -0.28223
+        ]
+      ],
+      "dimensions": [
+        0.02121199999999998,
+        0.02121200000000001,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_118.obj": {
+      "volume": null,
+      "surface_area": 0.13415551695900688,
+      "bounds": [
+        [
+          -0.535759,
+          0.119581,
+          -0.444703
+        ],
+        [
+          -0.449166,
+          0.287373,
+          -0.240672
+        ]
+      ],
+      "dimensions": [
+        0.08659299999999998,
+        0.167792,
+        0.20403100000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 72,
+      "num_faces": 40
+    },
+    "original_104.obj": {
+      "volume": null,
+      "surface_area": 0.0028577169653331595,
+      "bounds": [
+        [
+          -0.553493,
+          0.743755,
+          0.024555
+        ],
+        [
+          -0.54819,
+          0.777269,
+          0.05807
+        ]
+      ],
+      "dimensions": [
+        0.005303000000000058,
+        0.03351399999999993,
+        0.033514999999999996
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_100.obj": {
+      "volume": null,
+      "surface_area": 1.42999456586064,
+      "bounds": [
+        [
+          -0.54819,
+          0.108815,
+          -0.396166
+        ],
+        [
+          0.561432,
+          0.828156,
+          0.102747
+        ]
+      ],
+      "dimensions": [
+        1.1096219999999999,
+        0.719341,
+        0.49891300000000005
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 1152,
+      "num_faces": 768
+    },
+    "original_129.obj": {
+      "volume": null,
+      "surface_area": 0.0026291460878700287,
+      "bounds": [
+        [
+          -0.333048,
+          0.130871,
+          -0.360207
+        ],
+        [
+          -0.301231,
+          0.151372,
+          -0.33
+        ]
+      ],
+      "dimensions": [
+        0.031816999999999984,
+        0.02050100000000002,
+        0.030206999999999984
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_25.obj": {
+      "volume": null,
+      "surface_area": 0.6561063276442648,
+      "bounds": [
+        [
+          -0.531522,
+          -0.494716,
+          0.072376
+        ],
+        [
+          0.544764,
+          0.102376,
+          0.140554
+        ]
+      ],
+      "dimensions": [
+        1.076286,
+        0.597092,
+        0.06817800000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 288,
+      "num_faces": 184
+    },
+    "original_87.obj": {
+      "volume": null,
+      "surface_area": 0.0014034587936888265,
+      "bounds": [
+        [
+          -0.165865,
+          0.254529,
+          -0.444208
+        ],
+        [
+          -0.144653,
+          0.27555,
+          -0.42901
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.021021000000000012,
+        0.01519799999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_122.obj": {
+      "volume": null,
+      "surface_area": 0.42263279248466323,
+      "bounds": [
+        [
+          -0.531522,
+          0.419582,
+          -0.278836
+        ],
+        [
+          0.544764,
+          0.575662,
+          -0.076674
+        ]
+      ],
+      "dimensions": [
+        1.076286,
+        0.15608,
+        0.20216199999999995
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 288,
+      "num_faces": 184
+    },
+    "original_47.obj": {
+      "volume": null,
+      "surface_area": 0.0014034320390221885,
+      "bounds": [
+        [
+          0.157895,
+          -0.508214,
+          0.426708
+        ],
+        [
+          0.179107,
+          -0.502911,
+          0.447919
+        ]
+      ],
+      "dimensions": [
+        0.02121199999999998,
+        0.005303000000000058,
+        0.021211000000000035
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_77.obj": {
+      "volume": null,
+      "surface_area": 0.0028577390704859562,
+      "bounds": [
+        [
+          0.561432,
+          0.223763,
+          -0.423606
+        ],
+        [
+          0.566735,
+          0.257277,
+          -0.390091
+        ]
+      ],
+      "dimensions": [
+        0.005302999999999947,
+        0.03351399999999999,
+        0.03351499999999996
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_113.obj": {
+      "volume": null,
+      "surface_area": 0.001403458431141823,
+      "bounds": [
+        [
+          -0.165865,
+          0.799802,
+          0.057873
+        ],
+        [
+          -0.144653,
+          0.815,
+          0.078894
+        ]
+      ],
+      "dimensions": [
+        0.02121200000000001,
+        0.015197999999999934,
+        0.021021000000000005
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_14.obj": {
+      "volume": null,
+      "surface_area": 0.4133399567960001,
+      "bounds": [
+        [
+          0.462408,
+          -0.486243,
+          0.400372
+        ],
+        [
+          0.549,
+          0.102376,
+          0.486964
+        ]
+      ],
+      "dimensions": [
+        0.08659200000000006,
+        0.588619,
+        0.086592
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 72,
+      "num_faces": 40
+    },
+    "original_7.obj": {
+      "volume": null,
+      "surface_area": 0.0014034528345854827,
+      "bounds": [
+        [
+          0.157895,
+          0.050354,
+          -0.287533
+        ],
+        [
+          0.179107,
+          0.071566,
+          -0.28223
+        ]
+      ],
+      "dimensions": [
+        0.02121199999999998,
+        0.021212,
+        0.005303000000000002
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 240,
+      "num_faces": 140
+    },
+    "original_121.obj": {
+      "volume": null,
+      "surface_area": 0.3266523027910095,
+      "bounds": [
+        [
+          -0.189348,
+          0.12325,
+          -0.446254
+        ],
+        [
+          -0.12117,
+          0.869875,
+          0.094413
+        ]
+      ],
+      "dimensions": [
+        0.06817799999999999,
+        0.746625,
+        0.540667
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 104,
+      "num_faces": 64
+    }
+  },
+  "scaling_analysis": {
+    "current_dimensions": [
+      1.16529,
+      1.405094,
+      0.9737210000000001
+    ],
+    "current_dimensions_sorted": [
+      0.9737210000000001,
+      1.16529,
+      1.405094
+    ],
+    "target_dimensions": null,
+    "target_dimensions_sorted": null,
+    "dimension_scale_factors": null,
+    "recommended_uniform_scale": null,
+    "scaled_dimensions": null,
+    "scaling_note": "No target dimensions provided - VLM will infer realistic size based on object type"
+  },
+  "user_guidance_placeholder": {
+    "guidance_requested": true,
+    "description": "Natural language guidance for physical properties",
+    "examples": [
+      "The stapler body is made of durable ABS plastic with metal hinges",
+      "This is a heavy-duty industrial stapler with reinforced steel components",
+      "Lightweight desktop stapler with plastic construction throughout",
+      "The base has rubber padding for grip, main body is aluminum"
+    ],
+    "note": "Provide any information about materials, weight distribution, usage context, or special properties"
+  },
+  "rendered_images": [
+    "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_box/100221/mesh_renders/composite_before.png",
+    "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_box/100221/mesh_renders/assembled_front.png",
+    "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_box/100221/mesh_renders/assembled_back.png",
+    "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_box/100221/mesh_renders/assembled_left.png",
+    "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_box/100221/mesh_renders/assembled_right.png",
+    "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_box/100221/mesh_renders/assembled_perspective.png"
+  ],
+  "user_guidance": "A very small jewelry box/treasure chest with slightly open rotational lid. Low damping for a smooth hinge behavior."
+}

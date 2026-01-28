@@ -1,0 +1,71 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.35,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 2.0,
+      "inertia": {
+        "ixx": 0.0105,
+        "iyy": 0.0268,
+        "izz": 0.037,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 10.0,
+      "inertia": {
+        "ixx": 0.154,
+        "iyy": 0.317,
+        "izz": 0.351,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.1,
+      "friction": 0.5,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 1.570796
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: vlmoneshot",
+    "User guidance provided: I want a microwave opening its door halfway. Low damping for hinge-like behavior.",
+    "Method: One-Shot VLM (single query, no aggregation)",
+    "Total mass estimate: 12.000 kg (\u03c3=0.700)",
+    "Scale factor: 0.3500 (\u03c3=0.9000)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 0.785398,
+    "joint_1": 0.0,
+    "_reasoning": "The 'joint_1' is a fixed joint, so its initial position is set to 0.0. For 'joint_0', which is the microwave door hinge, the user explicitly requested the door to be 'halfway' open. Given its limits from 0.0 to 1.570796 radians (0 to 90 degrees), halfway is 0.785398 radians (45 degrees)."
+  }
+}

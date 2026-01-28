@@ -1,0 +1,147 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.2,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "mass": 0.002,
+      "inertia": {
+        "ixx": 2.08e-08,
+        "iyy": 1.54e-07,
+        "izz": 1.66e-07,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      },
+      "_action": "new",
+      "_visual_notes": "Visually, a small plastic lever, likely ABS. Small mass and inertia."
+    },
+    "link_1": {
+      "mass": 0.01,
+      "inertia": {
+        "ixx": 4.16e-07,
+        "iyy": 2.16e-06,
+        "izz": 2.41e-06,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      },
+      "_action": "new",
+      "_visual_notes": "Visually, a small plastic cap/lid on the tank, likely ABS. Small mass and inertia."
+    },
+    "link_2": {
+      "mass": 0.4,
+      "inertia": {
+        "ixx": 0.00081,
+        "iyy": 0.00081,
+        "izz": 0.00162,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      },
+      "_action": "new",
+      "_visual_notes": "Visually, a thin, smooth, white plastic lid, likely ABS. Approximated as a thin disk for inertia. Mass is substantial for its size due to solid plastic construction."
+    },
+    "link_3": {
+      "mass": 0.29,
+      "inertia": {
+        "ixx": 0.000587,
+        "iyy": 0.000587,
+        "izz": 0.0011745,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      },
+      "_action": "new",
+      "_visual_notes": "Visually, a thin, smooth, white plastic seat, likely ABS. Approximated as a thin disk/ring for inertia. Slightly lighter than the lid."
+    },
+    "link_4": {
+      "mass": 2.6,
+      "inertia": {
+        "ixx": 0.039,
+        "iyy": 0.02816,
+        "izz": 0.02816,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      },
+      "_action": "new",
+      "_visual_notes": "Visually, the main body is solid-looking, smooth, white, and appears to be made of plastic (ABS) suitable for a baby toilet. Approximated as a hollow box for mass estimation, solid box for inertia calculation."
+    },
+    "base": {
+      "mass": 0.001,
+      "inertia": {
+        "ixx": 1e-06,
+        "iyy": 1e-06,
+        "izz": 1e-06,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "damping": 5.0,
+      "friction": 0.05,
+      "stiffness": 10.0,
+      "_action": "new"
+    },
+    "joint_1": {
+      "damping": 20.0,
+      "friction": 0.2,
+      "stiffness": 10.0,
+      "_action": "new"
+    },
+    "joint_2": {
+      "damping": 5.0,
+      "friction": 0.05,
+      "stiffness": 10.0,
+      "_action": "new"
+    },
+    "joint_3": {
+      "damping": 5.0,
+      "friction": 0.05,
+      "stiffness": 10.0,
+      "_action": "new"
+    }
+  },
+  "initial_joint_positions": {
+    "joint_0": 0.01,
+    "joint_1": 0.0,
+    "joint_2": 1.658,
+    "joint_3": 0.01,
+    "_reasoning": "Observed the lid (link_2) to be in the closed position (joint_2 at 0 degrees) in the provided images. User requested 'lid open all the way', so joint_2 is set to 95 degrees (1.658 radians), which is near its upper limit of 100 degrees, achieving the fully open state. (Sapien+VLM iterative refinement)"
+  },
+  "validation_notes": [
+    "SIZE REASONING: Current mesh dimensions are [0.982551, 1.466891, 1.483288]m. A real-world baby toilet is typically around 0.2m x 0.3m x 0.3m. Applying a uniform scale of 0.2 gives final dimensions of [0.1965, 0.2934, 0.2966]m, which matches real-world expectations for a baby toilet and allows for robot interaction with some parts.",
+    "VISUAL MATERIAL REASONING: All visible parts (toilet_body, lid, seat, pump_lid, lever) appear to be smooth, white plastic from the renderings. Therefore, ABS plastic (density 1040 kg/m\u00b3) was assumed for all links.",
+    "MASS CALCULATIONS: Due to non-watertight mesh warnings and negative volume readings, masses were estimated based on the scaled dimensions and assumed ABS plastic density.",
+    "    - link_4 (toilet_body): Estimated volume ~0.0025 m\u00b3 (for a hollow plastic object of 0.2x0.3x0.3m scaled size). Mass = 0.0025 m\u00b3 * 1040 kg/m\u00b3 = 2.6 kg.",
+    "    - link_3 (seat): Estimated volume ~0.00028 m\u00b3 (ring of ~0.18m OD, 0.12m ID, 0.02m thickness). Mass = 0.00028 m\u00b3 * 1040 kg/m\u00b3 = 0.29 kg.",
+    "    - link_2 (lid): Estimated volume ~0.00038 m\u00b3 (disk of ~0.18m diameter, 0.015m thickness). Mass = 0.00038 m\u00b3 * 1040 kg/m\u00b3 = 0.4 kg.",
+    "    - link_1 (pump_lid): Estimated volume ~0.00001 m\u00b3 (box of ~0.05x0.02x0.01m). Mass = 0.00001 m\u00b3 * 1040 kg/m\u00b3 = 0.01 kg.",
+    "    - link_0 (lever): Estimated volume ~0.0000015 m\u00b3 (box of ~0.03x0.01x0.005m). Mass = 0.0000015 m\u00b3 * 1040 kg/m\u00b3 = 0.002 kg.",
+    "USER GUIDANCE INTEGRATION: User requested 'low damping for hinge-like behavior'. Damping values for revolute joints (joint_0, joint_2, joint_3) were set to 5.0 (low end of 0.1-150 range) to reflect this, allowing free movement without significant resistance. Stiffness for these joints was also set low (10.0) so they don't strongly spring back to a default position, and can stay where placed. Friction was set low (0.05).",
+    "STATE CONFIGURATION: User requested 'lid open all the way'. The lid (link_2) is controlled by joint_2. The images show link_2 at 0 degrees. The range for joint_2 is 0 to 100 degrees. To achieve 'open all the way', joint_2 was set to 95 degrees (1.658 radians), close to its upper limit.",
+    "FINAL SIZE: 0.197m \u00d7 0.293m \u00d7 0.297m (note: only 0 dim(s) \u2264 0.075m gripper - realistic size preserved)",
+    "Added minimal inertial properties to link 'base'",
+    "STATE REFINEMENT: Collision-free in 1 iteration(s). Positions: {'joint_0': 0.01, 'joint_1': 0.0, 'joint_2': 1.658, 'joint_3': 0.01}"
+  ],
+  "initial_joint_positions_vlm_original": {
+    "joint_2": 1.658,
+    "_reasoning": "Observed the lid (link_2) to be in the closed position (joint_2 at 0 degrees) in the provided images. User requested 'lid open all the way', so joint_2 is set to 95 degrees (1.658 radians), which is near its upper limit of 100 degrees, achieving the fully open state."
+  },
+  "_state_refinement_history": {
+    "iteration_0": {
+      "penetration_sum": 0.0,
+      "contact_count": 1
+    }
+  }
+}

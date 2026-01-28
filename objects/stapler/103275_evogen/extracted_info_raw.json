@@ -1,0 +1,535 @@
+{
+  "object_type": "stapler",
+  "asset_path": "/home/huluwulu/Projects/eurekaworld/tasks/franka_droid_stapler_test/103275",
+  "bounding_box": {
+    "min": [
+      -0.165232,
+      -0.23496,
+      -0.976237
+    ],
+    "max": [
+      0.157056,
+      0.383419,
+      0.904974
+    ],
+    "dimensions": [
+      0.322288,
+      0.618379,
+      1.881211
+    ],
+    "center": [
+      -0.004087999999999994,
+      0.0742295,
+      -0.03563150000000004
+    ],
+    "diagonal_length": 2.0062943376050284,
+    "volume": 0.3749180741805851
+  },
+  "metadata": {
+    "user_id": "kent0318",
+    "model_cat": "Stapler",
+    "model_id": "8f54f0bec8eb5d35d25169d37940fb64",
+    "version": "1",
+    "anno_id": "3275",
+    "time_in_sec": "40"
+  },
+  "semantics": {
+    "link_0": {
+      "joint_type": "hinge",
+      "semantic_name": "stapler_body"
+    },
+    "link_1": {
+      "joint_type": "hinge",
+      "semantic_name": "lid"
+    },
+    "link_2": {
+      "joint_type": "free",
+      "semantic_name": "stapler_base"
+    }
+  },
+  "mobility": [
+    {
+      "id": 0,
+      "parent": 1,
+      "joint": "hinge",
+      "name": "body",
+      "parts": [
+        {
+          "id": 1,
+          "name": "body"
+        }
+      ],
+      "jointData": {
+        "axis": {
+          "origin": [
+            0,
+            0.05541878091365121,
+            -0.8199527809136512
+          ],
+          "direction": [
+            1,
+            0,
+            0
+          ]
+        },
+        "limit": {
+          "a": 0,
+          "b": 147.6,
+          "noLimit": false
+        }
+      }
+    },
+    {
+      "id": 1,
+      "parent": 2,
+      "joint": "hinge",
+      "name": "lid",
+      "parts": [
+        {
+          "id": 2,
+          "name": "lid"
+        }
+      ],
+      "jointData": {
+        "axis": {
+          "origin": [
+            0,
+            0.055418780913651204,
+            -0.8199527809136512
+          ],
+          "direction": [
+            1,
+            0,
+            0
+          ]
+        },
+        "limit": {
+          "a": 6.84,
+          "b": -194.04,
+          "noLimit": false
+        }
+      }
+    },
+    {
+      "id": 2,
+      "parent": -1,
+      "joint": "free",
+      "name": "base_body",
+      "parts": [
+        {
+          "id": 3,
+          "name": "base_body"
+        }
+      ],
+      "jointData": {}
+    }
+  ],
+  "urdf_structure": {
+    "robot_name": "partnet_8f54f0bec8eb5d35d25169d37940fb64",
+    "links": {
+      "base": {
+        "has_inertial": false,
+        "has_visual": false,
+        "has_collision": false,
+        "visual_meshes": [],
+        "collision_meshes": []
+      },
+      "link_0": {
+        "has_inertial": false,
+        "has_visual": true,
+        "has_collision": true,
+        "visual_meshes": [
+          {
+            "filename": "textured_objs/original_5.obj",
+            "scale": "1 1 1"
+          }
+        ],
+        "collision_meshes": [
+          {
+            "filename": "textured_objs/original_5.obj",
+            "scale": "1 1 1"
+          }
+        ]
+      },
+      "link_1": {
+        "has_inertial": false,
+        "has_visual": true,
+        "has_collision": true,
+        "visual_meshes": [
+          {
+            "filename": "textured_objs/original_2.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_3.obj",
+            "scale": "1 1 1"
+          }
+        ],
+        "collision_meshes": [
+          {
+            "filename": "textured_objs/original_2.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_3.obj",
+            "scale": "1 1 1"
+          }
+        ]
+      },
+      "link_2": {
+        "has_inertial": false,
+        "has_visual": true,
+        "has_collision": true,
+        "visual_meshes": [
+          {
+            "filename": "textured_objs/original_4.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_8.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_9.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_6.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_7.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_1.obj",
+            "scale": "1 1 1"
+          }
+        ],
+        "collision_meshes": [
+          {
+            "filename": "textured_objs/original_4.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_8.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_9.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_6.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_7.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_1.obj",
+            "scale": "1 1 1"
+          }
+        ]
+      }
+    },
+    "joints": {
+      "joint_0": {
+        "type": "revolute",
+        "parent": "link_1",
+        "child": "link_0",
+        "axis": "1 0 0",
+        "limits": {
+          "lower": 0.0,
+          "upper": 2.5761059759436304,
+          "effort": 0.0,
+          "velocity": 0.0
+        }
+      },
+      "joint_1": {
+        "type": "revolute",
+        "parent": "link_2",
+        "child": "link_1",
+        "axis": "-1 0 0",
+        "limits": {
+          "lower": -0.11938052083641214,
+          "upper": 3.386636880569797,
+          "effort": 0.0,
+          "velocity": 0.0
+        }
+      },
+      "joint_2": {
+        "type": "fixed",
+        "parent": "base",
+        "child": "link_2"
+      }
+    },
+    "materials": []
+  },
+  "mesh_analysis": {
+    "original_5.obj": {
+      "volume": null,
+      "surface_area": 2.285471226376927,
+      "bounds": [
+        [
+          -0.106963,
+          0.001219,
+          -0.844889
+        ],
+        [
+          0.086356,
+          0.113147,
+          0.532748
+        ]
+      ],
+      "dimensions": [
+        0.19331900000000002,
+        0.111928,
+        1.377637
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 992,
+      "num_faces": 672
+    },
+    "original_7.obj": {
+      "volume": null,
+      "surface_area": 2.5924400256560176,
+      "bounds": [
+        [
+          -0.165232,
+          -0.23496,
+          -0.976237
+        ],
+        [
+          0.157056,
+          -0.164447,
+          0.904974
+        ]
+      ],
+      "dimensions": [
+        0.322288,
+        0.07051299999999999,
+        1.881211
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 408,
+      "num_faces": 352
+    },
+    "original_6.obj": {
+      "volume": null,
+      "surface_area": 0.05466876612876005,
+      "bounds": [
+        [
+          -0.148544,
+          0.036285,
+          -0.839087
+        ],
+        [
+          0.127937,
+          0.074553,
+          -0.800819
+        ]
+      ],
+      "dimensions": [
+        0.276481,
+        0.038267999999999996,
+        0.03826800000000008
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 1288,
+      "num_faces": 796
+    },
+    "original_9.obj": {
+      "volume": null,
+      "surface_area": 0.0025249382010171153,
+      "bounds": [
+        [
+          -0.016933,
+          -0.102239,
+          0.39825
+        ],
+        [
+          0.008757,
+          -0.099287,
+          0.42394
+        ]
+      ],
+      "dimensions": [
+        0.025689999999999998,
+        0.0029519999999999963,
+        0.02568999999999999
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 192,
+      "num_faces": 184
+    },
+    "original_4.obj": {
+      "volume": null,
+      "surface_area": 2.6802351564023668,
+      "bounds": [
+        [
+          -0.153216,
+          -0.213601,
+          -0.933144
+        ],
+        [
+          0.145039,
+          -0.113271,
+          0.842636
+        ]
+      ],
+      "dimensions": [
+        0.298255,
+        0.10033000000000002,
+        1.7757800000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 180,
+      "num_faces": 144
+    },
+    "original_8.obj": {
+      "volume": null,
+      "surface_area": 0.3656941268325208,
+      "bounds": [
+        [
+          -0.153216,
+          -0.113271,
+          0.270295
+        ],
+        [
+          0.145039,
+          -0.102239,
+          0.551896
+        ]
+      ],
+      "dimensions": [
+        0.298255,
+        0.011032,
+        0.28160100000000005
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 424,
+      "num_faces": 312
+    },
+    "original_3.obj": {
+      "volume": null,
+      "surface_area": 0.8067430644406222,
+      "bounds": [
+        [
+          -0.150771,
+          0.083849,
+          0.24864
+        ],
+        [
+          0.129335,
+          0.383419,
+          0.622133
+        ]
+      ],
+      "dimensions": [
+        0.28010599999999997,
+        0.29957,
+        0.3734930000000001
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 284,
+      "num_faces": 240
+    },
+    "original_2.obj": {
+      "volume": null,
+      "surface_area": 3.1938759297287636,
+      "bounds": [
+        [
+          -0.138858,
+          -0.032454,
+          -0.848969
+        ],
+        [
+          0.118251,
+          0.371405,
+          0.593382
+        ]
+      ],
+      "dimensions": [
+        0.25710900000000003,
+        0.40385899999999997,
+        1.442351
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 1104,
+      "num_faces": 676
+    },
+    "original_1.obj": {
+      "volume": null,
+      "surface_area": 1.7824943391567434,
+      "bounds": [
+        [
+          -0.120844,
+          -0.113271,
+          -0.844889
+        ],
+        [
+          0.100237,
+          0.081457,
+          -0.015154
+        ]
+      ],
+      "dimensions": [
+        0.221081,
+        0.194728,
+        0.829735
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 1576,
+      "num_faces": 1064
+    }
+  },
+  "scaling_analysis": {
+    "current_dimensions": [
+      0.322288,
+      0.618379,
+      1.881211
+    ],
+    "current_dimensions_sorted": [
+      0.322288,
+      0.618379,
+      1.881211
+    ],
+    "target_dimensions": null,
+    "target_dimensions_sorted": null,
+    "dimension_scale_factors": null,
+    "recommended_uniform_scale": null,
+    "scaled_dimensions": null,
+    "scaling_note": "No target dimensions provided - VLM will infer realistic size based on object type"
+  },
+  "user_guidance_placeholder": {
+    "guidance_requested": true,
+    "description": "Natural language guidance for physical properties",
+    "examples": [
+      "The stapler body is made of durable ABS plastic with metal hinges",
+      "This is a heavy-duty industrial stapler with reinforced steel components",
+      "Lightweight desktop stapler with plastic construction throughout",
+      "The base has rubber padding for grip, main body is aluminum"
+    ],
+    "note": "Provide any information about materials, weight distribution, usage context, or special properties"
+  },
+  "rendered_images": [
+    "/home/huluwulu/Projects/eurekaworld/tasks/franka_droid_stapler_test/103275/mesh_renders/composite_before.png",
+    "/home/huluwulu/Projects/eurekaworld/tasks/franka_droid_stapler_test/103275/mesh_renders/assembled_front.png",
+    "/home/huluwulu/Projects/eurekaworld/tasks/franka_droid_stapler_test/103275/mesh_renders/assembled_back.png",
+    "/home/huluwulu/Projects/eurekaworld/tasks/franka_droid_stapler_test/103275/mesh_renders/assembled_left.png",
+    "/home/huluwulu/Projects/eurekaworld/tasks/franka_droid_stapler_test/103275/mesh_renders/assembled_right.png",
+    "/home/huluwulu/Projects/eurekaworld/tasks/franka_droid_stapler_test/103275/mesh_renders/assembled_perspective.png"
+  ],
+  "user_guidance": "I want a slightly open stapler"
+}

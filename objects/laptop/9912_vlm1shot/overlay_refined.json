@@ -1,0 +1,71 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.32,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 1.0,
+      "inertia": {
+        "ixx": 0.0052,
+        "iyy": 0.0102,
+        "izz": 0.0154,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.5,
+      "inertia": {
+        "ixx": 0.002,
+        "iyy": 0.0071,
+        "izz": 0.0051,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.1,
+      "friction": 0.7,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": -1.85,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: vlmoneshot",
+    "User guidance provided: I want a slightly open laptop. Low damping for smooth operation.",
+    "Method: One-Shot VLM (single query, no aggregation)",
+    "Total mass estimate: 1.500 kg (\u03c3=0.100)",
+    "Scale factor: 0.3200 (\u03c3=0.0500)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 0.0,
+    "joint_1": -0.5,
+    "_reasoning": "Joint_0 is a fixed joint connecting the base to the world, so its initial position is 0.0. Joint_1 is the revolute hinge for the screen. Based on the URDF's provided limits (lower: -1.85 rad, upper: 0.0 rad) and typical laptop hinge behavior, 0.0 rad is considered the fully closed position (screen flush with the base), and -1.85 rad (approximately 106 degrees) is the fully open position. To achieve a 'slightly open laptop' as requested, an intermediate value of -0.5 radians (approximately 28.6 degrees open) was chosen."
+  }
+}

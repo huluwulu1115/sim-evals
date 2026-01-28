@@ -1,0 +1,94 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.5310391752577319,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 3.962338291248703,
+      "inertia": {
+        "ixx": 0.07513083635324354,
+        "iyy": 0.13340646829989847,
+        "izz": 0.10925068886052776,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 4.056256983240224,
+      "inertia": {
+        "ixx": 0.10343287453207012,
+        "iyy": 0.16841204737324256,
+        "izz": 0.13583251313539477,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_2": {
+      "_action": "new",
+      "mass": 23.40531608763222,
+      "inertia": {
+        "ixx": 1.1844472937034642,
+        "iyy": 1.1866401616411735,
+        "izz": 1.1765233487458457,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.02179236043095005,
+      "friction": 0.9511165426063771,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.9999999999999917
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.02179236043095005,
+      "friction": 0.9511165426063771,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.9999999999999917
+      }
+    },
+    "joint_2": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: phys2realivw",
+    "User guidance provided: I want a 2-drawer, under desk office cabinet, with first drawer fully closed, second drawer halfway open and low damping, sliding joints.",
+    "Method: Phys2Real Inverse-Variance Weighted Aggregation (25/25 successful queries)",
+    "Total mass estimate: 31.909 kg (\u03c3=0.148)",
+    "Scale factor: 0.5310 (\u03c3=0.0102)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 0.0,
+    "joint_1": 0.17742141157811261,
+    "joint_2": 0.0,
+    "_reasoning": "The first drawer (joint_0) is set to 0.0 (fully closed) as requested. The second drawer (joint_1) is set to 0.122, which is half of its estimated maximum extension (0.244 meters), as requested. The base joint (joint_2) is fixed, so its initial position is 0.0."
+  }
+}

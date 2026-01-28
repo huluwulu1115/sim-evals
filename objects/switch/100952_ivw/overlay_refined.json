@@ -1,0 +1,71 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.07291303827751196,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 0.0163480808918024,
+      "inertia": {
+        "ixx": 6.929804432960661e-06,
+        "iyy": 6.929804432960657e-06,
+        "izz": 1.275904910108515e-05,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.06250157605946219,
+      "inertia": {
+        "ixx": 4.97178161364905e-05,
+        "iyy": 4.97178161364905e-05,
+        "izz": 9.223693525287119e-05,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.017941101649083732,
+      "friction": 0.12475353013040885,
+      "stiffness": 9.936342592592592e-18,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.31415913267948953
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: phys2realivw",
+    "User guidance provided: I want a household, plastic light switch being turned off. Low stiffness and damping for smooth switch behavior.",
+    "Method: Phys2Real Inverse-Variance Weighted Aggregation (25/25 successful queries)",
+    "Total mass estimate: 0.083 kg (\u03c3=0.005)",
+    "Scale factor: 0.0729 (\u03c3=0.0024)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 3.310412716829931e-13,
+    "joint_1": 0.0,
+    "_reasoning": "Joint_0 (toggle_button) is set to 0.0 radians, representing one end of its motion range, which is interpreted as the 'off' position as requested in the user guidance. Joint_1 (fixed) is set to 0.0 as it has no active motion."
+  }
+}

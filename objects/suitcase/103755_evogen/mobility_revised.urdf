@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="partnet_6eee2279c193892a8c80080da8fd52c9-0">
+    <!--
+  INITIAL JOINT POSITIONS (Set by VLM based on desired state)
+  ============================================================
+  joint_1: 0.349
+  Reasoning: The user requested the 'lid just slightly open'. The provided rendered images show the lid in a fully closed position (which corresponds to joint_1 at 0 degrees). Joint_1 (lid) has a range of -60.0° to 120.0°. To achieve a 'slightly open' state, an angle of 20 degrees (0.349 radians) was chosen, which is a small positive rotation from the closed position and well within the joint limits.
+  ============================================================
+  -->
+    <link name="base">
+        <inertial>
+            <mass value="0.001" />
+            <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </inertial>
+    </link>
+    <link name="link_0">
+        <visual name="handle-1">
+            <origin xyz="-0.000000 -0.197938 0.066848" />
+            <geometry>
+                <mesh filename="textured_objs/original_15.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="-0.000000 -0.197938 0.066848" />
+            <geometry>
+                <mesh filename="textured_objs/original_15.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.075" />
+            <inertia ixx="3.1e-06" iyy="0.00014" izz="0.00014" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0" />
+        </inertial>
+    </link>
+    <joint name="joint_0" type="revolute">
+        <origin xyz="0.000000 0.197938 -0.066848" />
+        <axis xyz="1.0 -0.0 -0.0" />
+        <child link="link_0" />
+        <parent link="link_2" />
+        <limit lower="-1.5707963267948966" upper="1.5707963267948966" />
+        <dynamics damping="10.0" friction="0.05" stiffness="0.1" />
+    </joint>
+    <link name="link_1">
+        <visual name="lid-2">
+            <origin xyz="0.150343 0.111911 0.056926" />
+            <geometry>
+                <mesh filename="textured_objs/original_2.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </visual>
+        <visual name="lid-2">
+            <origin xyz="0.150343 0.111911 0.056926" />
+            <geometry>
+                <mesh filename="textured_objs/original_6.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </visual>
+        <visual name="lid-2">
+            <origin xyz="0.150343 0.111911 0.056926" />
+            <geometry>
+                <mesh filename="textured_objs/original_7.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </visual>
+        <visual name="lid-2">
+            <origin xyz="0.150343 0.111911 0.056926" />
+            <geometry>
+                <mesh filename="textured_objs/original_4.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </visual>
+        <visual name="lid-2">
+            <origin xyz="0.150343 0.111911 0.056926" />
+            <geometry>
+                <mesh filename="textured_objs/original_5.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.150343 0.111911 0.056926" />
+            <geometry>
+                <mesh filename="textured_objs/original_2.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.150343 0.111911 0.056926" />
+            <geometry>
+                <mesh filename="textured_objs/original_6.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.150343 0.111911 0.056926" />
+            <geometry>
+                <mesh filename="textured_objs/original_7.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.150343 0.111911 0.056926" />
+            <geometry>
+                <mesh filename="textured_objs/original_4.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.150343 0.111911 0.056926" />
+            <geometry>
+                <mesh filename="textured_objs/original_5.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="1.0" />
+            <inertia ixx="0.011" iyy="0.013" izz="0.024" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0" />
+        </inertial>
+    </link>
+    <joint name="joint_1" type="revolute">
+        <origin xyz="-0.150343 -0.111911 -0.056926" />
+        <axis xyz="1.0 -0.0 -0.0" />
+        <child link="link_1" />
+        <parent link="link_2" />
+        <limit lower="-1.0471975511965976" upper="2.0943951023931953" />
+        <dynamics damping="5.0" friction="0.05" stiffness="0.1" />
+    </joint>
+    <link name="link_2">
+        <visual name="base_body-3">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_16.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </visual>
+        <visual name="base_body-3">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_13.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </visual>
+        <visual name="base_body-3">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_11.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </visual>
+        <visual name="base_body-3">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_17.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </visual>
+        <visual name="base_body-3">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_12.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </visual>
+        <visual name="base_body-3">
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_10.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_16.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_13.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_11.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_17.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_12.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <mesh filename="textured_objs/original_10.obj" scale="0.290000 0.290000 0.290000" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="1.5" />
+            <inertia ixx="0.018" iyy="0.02" izz="0.036" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0" />
+        </inertial>
+    </link>
+    <joint name="joint_2" type="fixed">
+        <origin rpy="1.570796326794897 0 -1.570796326794897" xyz="0.000000 0.000000 0.000000" />
+        <child link="link_2" />
+        <parent link="base" />
+    </joint>
+</robot>

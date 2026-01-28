@@ -1,0 +1,71 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.2,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 0.45,
+      "inertia": {
+        "ixx": 0.00305,
+        "iyy": 0.00212,
+        "izz": 0.00499,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 1.05,
+      "inertia": {
+        "ixx": 0.00877,
+        "iyy": 0.00661,
+        "izz": 0.01166,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.01,
+      "friction": 0.5,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": -1.0471975511965976,
+        "upper": 2.181661564992912
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: vlmoneshot",
+    "User guidance provided: A very small jewelry box/treasure chest with slightly open rotational lid. Low damping for a smooth hinge behavior.",
+    "Method: One-Shot VLM (single query, no aggregation)",
+    "Total mass estimate: 1.500 kg (\u03c3=0.300)",
+    "Scale factor: 0.2000 (\u03c3=0.0500)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 0.5236,
+    "joint_1": 0.0,
+    "_reasoning": "The 'base_body' (joint_1) is a fixed joint, so its initial position is set to 0.0. For the 'rotation_lid' (joint_0), user guidance specifies a 'slightly open rotational lid'. Assuming 0.0 radians represents the fully closed position, an initial angle of approximately 30 degrees (0.5236 radians) is chosen to represent this slightly open state, falling well within the joint's defined limits."
+  }
+}

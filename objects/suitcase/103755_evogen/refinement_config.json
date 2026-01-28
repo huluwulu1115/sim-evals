@@ -1,0 +1,11 @@
+{
+  "object_id": "103755",
+  "object_name": "suitcase",
+  "task_type": "tool_use",
+  "guidance": "I want a small business suitcase with its lid just slightly open and low damping hinge.",
+  "model_name": "gemini-2.5-flash",
+  "target_dimensions": null,
+  "task_names": {
+    "direct": "Isaac-Suitcase-Tooluse-v0"
+  }
+}

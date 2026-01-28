@@ -1,0 +1,94 @@
+{
+  "global_modifications": {
+    "uniform_scale_factor": 0.2842245252883763,
+    "material_properties": {
+      "friction": 0.5,
+      "restitution": 0.1,
+      "contact_stiffness": 1000,
+      "contact_damping": 10
+    }
+  },
+  "link_modifications": {
+    "link_0": {
+      "_action": "new",
+      "mass": 0.05594392666098046,
+      "inertia": {
+        "ixx": 6.46894009281728e-06,
+        "iyy": 3.610357058767057e-05,
+        "izz": 2.939073117077842e-05,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_1": {
+      "_action": "new",
+      "mass": 0.17483744271243476,
+      "inertia": {
+        "ixx": 0.0008903214239202191,
+        "iyy": 0.0020339331528904415,
+        "izz": 0.0010144716089712795,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    },
+    "link_2": {
+      "_action": "new",
+      "mass": 0.9015480065866557,
+      "inertia": {
+        "ixx": 0.012409268437694944,
+        "iyy": 0.00895376835584799,
+        "izz": 0.013121538974569543,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      }
+    }
+  },
+  "joint_modifications": {
+    "joint_0": {
+      "_action": "new",
+      "damping": 0.09035002496525918,
+      "friction": 0.1397864974033468,
+      "stiffness": 1.406972222222222e-16,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.5716335835454259
+      }
+    },
+    "joint_1": {
+      "_action": "new",
+      "damping": 0.05866705581904415,
+      "friction": 0.4869669390927683,
+      "stiffness": 9.74423185941043e-17,
+      "limit_modifications": {
+        "lower": -3.309366666666607e-16,
+        "upper": 2.189450877272629e-14
+      }
+    },
+    "joint_2": {
+      "_action": "new",
+      "damping": 0.0,
+      "friction": 0.0,
+      "stiffness": 0.0,
+      "limit_modifications": {
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "validation_notes": [
+    "Object type: phys2realivw",
+    "User guidance provided: A very small, personal trash can with its lid slightly open. The lid hinge has low damping and holds its position.",
+    "Method: Phys2Real Inverse-Variance Weighted Aggregation (25/25 successful queries)",
+    "Total mass estimate: 1.058 kg (\u03c3=0.045)",
+    "Scale factor: 0.2842 (\u03c3=0.0120)"
+  ],
+  "initial_joint_positions": {
+    "joint_0": 2.849999999999974e-17,
+    "joint_1": 0.2162585727993536,
+    "joint_2": 0.0,
+    "_reasoning": "For joint_0 (foot_pad), the default, unpressed state is 0.0 radians. For joint_1 (lid), the user guidance specifies 'lid slightly open', so an angle of 0.349 radians (approximately 20 degrees) was chosen, which is between the closed (0.0) and fully open (3.154) limits. Joint_2 (base_body) is a fixed joint, so its initial position is 0.0 radians."
+  }
+}

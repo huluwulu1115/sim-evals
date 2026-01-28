@@ -1,0 +1,11 @@
+{
+  "object_id": "101673",
+  "object_name": "bag",
+  "task_type": "tool_use",
+  "guidance": "I want a small purse/handbag with handle moving freely, at resting position with handle lying sideways.",
+  "model_name": "gemini-2.5-flash",
+  "target_dimensions": null,
+  "task_names": {
+    "direct": "Isaac-Bag-Tooluse-v0"
+  }
+}

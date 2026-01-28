@@ -1,0 +1,281 @@
+{
+  "object_type": "switch",
+  "asset_path": "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_switch/100952",
+  "bounding_box": {
+    "min": [
+      -0.785574,
+      -0.759548,
+      -0.150644
+    ],
+    "max": [
+      0.777572,
+      0.803598,
+      0.251943
+    ],
+    "dimensions": [
+      1.5631460000000001,
+      1.5631460000000001,
+      0.402587
+    ],
+    "center": [
+      -0.004000999999999977,
+      0.022025000000000017,
+      0.050649499999999986
+    ],
+    "diagonal_length": 2.2469817816798163,
+    "volume": 0.9836913084809966
+  },
+  "metadata": {
+    "user_id": "KeplerSN",
+    "model_cat": "Switch",
+    "model_id": "d440abd3ea98676f877975b30c3a0670",
+    "version": "1",
+    "anno_id": "952",
+    "time_in_sec": "12"
+  },
+  "semantics": {
+    "link_0": {
+      "joint_type": "hinge",
+      "semantic_name": "toggle_button"
+    },
+    "link_1": {
+      "joint_type": "static",
+      "semantic_name": "switch_frame"
+    }
+  },
+  "mobility": [
+    {
+      "id": 0,
+      "parent": 1,
+      "joint": "hinge",
+      "name": "toggle_button",
+      "parts": [
+        {
+          "id": 1,
+          "name": "switch"
+        }
+      ],
+      "jointData": {
+        "axis": {
+          "origin": [
+            0.5333300000000003,
+            0.008866959911316495,
+            0.06
+          ],
+          "direction": [
+            1,
+            0,
+            0
+          ]
+        },
+        "limit": {
+          "a": 0,
+          "b": 18,
+          "noLimit": false
+        }
+      }
+    },
+    {
+      "id": 1,
+      "parent": -1,
+      "joint": "static",
+      "name": "base_body",
+      "parts": [
+        {
+          "id": 2,
+          "name": "base_body"
+        }
+      ],
+      "jointData": {}
+    }
+  ],
+  "urdf_structure": {
+    "robot_name": "partnet_d440abd3ea98676f877975b30c3a0670",
+    "links": {
+      "base": {
+        "has_inertial": false,
+        "has_visual": false,
+        "has_collision": false,
+        "visual_meshes": [],
+        "collision_meshes": []
+      },
+      "link_0": {
+        "has_inertial": false,
+        "has_visual": true,
+        "has_collision": true,
+        "visual_meshes": [
+          {
+            "filename": "textured_objs/original_4.obj",
+            "scale": "1 1 1"
+          }
+        ],
+        "collision_meshes": [
+          {
+            "filename": "textured_objs/original_4.obj",
+            "scale": "1 1 1"
+          }
+        ]
+      },
+      "link_1": {
+        "has_inertial": false,
+        "has_visual": true,
+        "has_collision": true,
+        "visual_meshes": [
+          {
+            "filename": "textured_objs/original_3.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_2.obj",
+            "scale": "1 1 1"
+          }
+        ],
+        "collision_meshes": [
+          {
+            "filename": "textured_objs/original_3.obj",
+            "scale": "1 1 1"
+          },
+          {
+            "filename": "textured_objs/original_2.obj",
+            "scale": "1 1 1"
+          }
+        ]
+      }
+    },
+    "joints": {
+      "joint_0": {
+        "type": "revolute",
+        "parent": "link_1",
+        "child": "link_0",
+        "axis": "1 0 0",
+        "limits": {
+          "lower": 0.0,
+          "upper": 0.3141592653589793,
+          "effort": 0.0,
+          "velocity": 0.0
+        }
+      },
+      "joint_1": {
+        "type": "fixed",
+        "parent": "base",
+        "child": "link_1"
+      }
+    },
+    "materials": []
+  },
+  "mesh_analysis": {
+    "original_2.obj": {
+      "volume": null,
+      "surface_area": 6.444052709484181,
+      "bounds": [
+        [
+          -0.785574,
+          -0.759548,
+          -0.150644
+        ],
+        [
+          0.777572,
+          0.803598,
+          0.083828
+        ]
+      ],
+      "dimensions": [
+        1.5631460000000001,
+        1.5631460000000001,
+        0.234472
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 1064,
+      "num_faces": 1680
+    },
+    "original_3.obj": {
+      "volume": null,
+      "surface_area": 1.9993456094904192,
+      "bounds": [
+        [
+          -0.551102,
+          -0.525076,
+          -0.150644
+        ],
+        [
+          0.5431,
+          0.569126,
+          0.083828
+        ]
+      ],
+      "dimensions": [
+        1.0942020000000001,
+        1.0942020000000001,
+        0.234472
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 112,
+      "num_faces": 112
+    },
+    "original_4.obj": {
+      "volume": null,
+      "surface_area": 5.89139248852104,
+      "bounds": [
+        [
+          -0.542896,
+          -0.516879,
+          -0.069033
+        ],
+        [
+          0.53333,
+          0.559356,
+          0.251943
+        ]
+      ],
+      "dimensions": [
+        1.0762260000000001,
+        1.076235,
+        0.320976
+      ],
+      "center_mass": null,
+      "is_watertight": false,
+      "num_vertices": 268,
+      "num_faces": 228
+    }
+  },
+  "scaling_analysis": {
+    "current_dimensions": [
+      1.5631460000000001,
+      1.5631460000000001,
+      0.402587
+    ],
+    "current_dimensions_sorted": [
+      0.402587,
+      1.5631460000000001,
+      1.5631460000000001
+    ],
+    "target_dimensions": null,
+    "target_dimensions_sorted": null,
+    "dimension_scale_factors": null,
+    "recommended_uniform_scale": null,
+    "scaled_dimensions": null,
+    "scaling_note": "No target dimensions provided - VLM will infer realistic size based on object type"
+  },
+  "user_guidance_placeholder": {
+    "guidance_requested": true,
+    "description": "Natural language guidance for physical properties",
+    "examples": [
+      "The stapler body is made of durable ABS plastic with metal hinges",
+      "This is a heavy-duty industrial stapler with reinforced steel components",
+      "Lightweight desktop stapler with plastic construction throughout",
+      "The base has rubber padding for grip, main body is aluminum"
+    ],
+    "note": "Provide any information about materials, weight distribution, usage context, or special properties"
+  },
+  "rendered_images": [
+    "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_switch/100952/mesh_renders/composite_before.png",
+    "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_switch/100952/mesh_renders/assembled_front.png",
+    "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_switch/100952/mesh_renders/assembled_back.png",
+    "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_switch/100952/mesh_renders/assembled_left.png",
+    "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_switch/100952/mesh_renders/assembled_right.png",
+    "/home/anhquanpham/Projects/eurekaworld/tasks/franka_droid_switch/100952/mesh_renders/assembled_perspective.png"
+  ],
+  "user_guidance": "I want a household, plastic light switch being turned off. Low stiffness and damping for smooth switch behavior."
+}
