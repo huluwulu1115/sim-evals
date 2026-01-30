@@ -127,7 +127,7 @@
         <axis xyz="-1 0 0" />
         <child link="link_1" />
         <parent link="link_2" />
-        <limit lower="-3.309366666666607e-16" upper="2.189450877272629e-14" />
+        <limit lower="0.0" upper="3.1541590242041524" />
         <dynamics damping="0.05866705581904415" friction="0.4869669390927683" stiffness="9.74423185941043e-17" />
     </joint>
     <link name="link_2">

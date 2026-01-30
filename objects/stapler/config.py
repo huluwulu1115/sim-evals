@@ -69,18 +69,21 @@ STAPLER_CONFIGS = {
         initial_rotation=INITIAL_ROTATION,
         grasping=_GRASPING_CONFIG,
         tool_use=_TOOL_USE_CONFIG,
+        disable_self_collision=True,
     ),
     "103275_ivw": ObjectTaskConfig(
         object_name="103275_ivw",
         initial_rotation=INITIAL_ROTATION,
         grasping=_GRASPING_CONFIG,
         tool_use=_TOOL_USE_CONFIG,
+        disable_self_collision=True,
     ),
     "103275_vlm1shot": ObjectTaskConfig(
         object_name="103275_vlm1shot",
         initial_rotation=INITIAL_ROTATION,
         grasping=_GRASPING_CONFIG,
         tool_use=_TOOL_USE_CONFIG,
+        disable_self_collision=True,
     ),
 }
 

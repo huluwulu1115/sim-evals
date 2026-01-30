@@ -16,7 +16,8 @@ from objects import (
 TOOL_USE_PROMPT = "Close the suitcase lid."
 
 # Initial spawn rotation (quaternion: w, x, y, z)
-INITIAL_ROTATION = (1.0, 0.0, 0.0, 0.0)
+# Slight rotation around Y-axis (-15 degrees) for stability
+INITIAL_ROTATION = (0.991, 0.0, -0.131, 0.0)
 
 # Tool use: joint_0 is the lid hinge
 # Joint limits: lower=-1.57 rad, upper=1.57 rad
@@ -34,7 +35,7 @@ _TOOL_USE_CONFIG = ToolUseTaskConfig(
     target_joint=TOOL_USE_TARGET_JOINT,
     target_position=TOOL_USE_TARGET_POSITION,
     position_tolerance=TOOL_USE_TOLERANCE,
-    fix_base=False,  # Suitcase can move freely
+    fix_base=True,  # Suitcase can move freely
     object_pos=TOOL_USE_OBJECT_POS,
 )
 

@@ -1,14 +1,53 @@
 {
   "global_modifications": {
-    "uniform_scale_factor": 0.5,
+    "uniform_scale_factor": 0.25,
     "material_properties": {
       "friction": 0.5,
-      "restitution": 0.1,
+      "restitution": 0.05,
       "contact_stiffness": 1000,
       "contact_damping": 10
     }
   },
   "link_modifications": {
+    "link_0": {
+      "mass": 2.0,
+      "inertia": {
+        "ixx": 0.017,
+        "iyy": 0.017,
+        "izz": 0.03,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      },
+      "_action": "new",
+      "_visual_notes": "Visually identified as the top drawer, appears to be made of dark, matte furniture material (e.g., MDF/particle board with laminate/paint). Includes a metallic handle."
+    },
+    "link_1": {
+      "mass": 2.0,
+      "inertia": {
+        "ixx": 0.017,
+        "iyy": 0.017,
+        "izz": 0.03,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      },
+      "_action": "new",
+      "_visual_notes": "Visually identified as the bottom drawer, appears identical in material and construction to the top drawer. Includes a metallic handle."
+    },
+    "link_2": {
+      "mass": 8.0,
+      "inertia": {
+        "ixx": 0.12,
+        "iyy": 0.12,
+        "izz": 0.12,
+        "ixy": 0.0,
+        "ixz": 0.0,
+        "iyz": 0.0
+      },
+      "_action": "new",
+      "_visual_notes": "Visually identified as the main furniture body/cabinet. Appears as a thick, solid structure made of dark, matte furniture material (e.g., MDF/particle board with laminate/paint)."
+    },
     "base": {
       "mass": 0.0,
       "inertia": {
@@ -20,61 +59,7 @@
         "iyz": 0.0
       },
       "_action": "new",
-      "_visual_notes": "Base is the world frame, has no visual or collision properties, so mass and inertia are set to zero."
-    },
-    "link_0": {
-      "mass": 8.4,
-      "inertia": {
-        "ixx": 0.29575,
-        "iyy": 0.21875,
-        "izz": 0.427,
-        "ixy": 0.0,
-        "ixz": 0.0,
-        "iyz": 0.0
-      },
-      "center_of_mass": [
-        0.0,
-        0.0,
-        0.0
-      ],
-      "_action": "new",
-      "_visual_notes": "Visually, this is the top drawer. It appears to be made of painted particle board or MDF, with a metallic handle. The overall shape is rectangular. Mass and inertia calculated based on an estimated volume for a drawer of this material."
-    },
-    "link_1": {
-      "mass": 8.4,
-      "inertia": {
-        "ixx": 0.29575,
-        "iyy": 0.21875,
-        "izz": 0.427,
-        "ixy": 0.0,
-        "ixz": 0.0,
-        "iyz": 0.0
-      },
-      "center_of_mass": [
-        0.0,
-        0.0,
-        0.0
-      ],
-      "_action": "new",
-      "_visual_notes": "Visually, this is the bottom drawer. It appears identical in material and construction to link_0 (top drawer). Mass and inertia are therefore identical to link_0."
-    },
-    "link_2": {
-      "mass": 70.0,
-      "inertia": {
-        "ixx": 4.2,
-        "iyy": 4.2,
-        "izz": 4.2,
-        "ixy": 0.0,
-        "ixz": 0.0,
-        "iyz": 0.0
-      },
-      "center_of_mass": [
-        0.0,
-        0.0,
-        0.0
-      ],
-      "_action": "new",
-      "_visual_notes": "Visually, this is the main furniture body (cabinet frame). It is dark grey and appears to be made of painted particle board or MDF. It is a substantial, box-like structure. Mass and inertia are calculated based on a hollow box construction of an estimated volume and MDF density."
+      "_visual_notes": "Root link with no visual geometry, hence zero mass and inertia."
     }
   },
   "joint_modifications": {
@@ -89,34 +74,26 @@
       "friction": 0.2,
       "stiffness": 0.1,
       "_action": "new"
-    },
-    "joint_2": {
-      "_action": "no_change"
     }
   },
   "initial_joint_positions": {
-    "joint_0": 0.01,
-    "joint_1": 0.5,
-    "_reasoning": "User requested 'first drawer fully closed' (joint_0) which corresponds to position 0.0m. User requested 'second drawer halfway open' (joint_1), and its range is 0.0m to 1.0m, so halfway is 0.5m. (Sapien+VLM iterative refinement)"
+    "joint_0": -0.02,
+    "joint_1": 0.15,
+    "_reasoning": "For 'Close the drawer' task: joint_1 (TOP drawer, target) starts OPEN at 0.15m (60% of 0.25m). joint_0 (BOTTOM drawer) stays CLOSED at 0.0m."
   },
   "validation_notes": [
-    "SIZE REASONING: The current mesh dimensions are approximately 1.2m x 1.2m x 1.2m. A typical under-desk office cabinet is around 0.6m in height. To achieve this realistic size, a uniform scale factor of 0.5 was applied (0.6m / 1.209938m = 0.4958, rounded to 0.5). This results in final dimensions of approximately 0.600m x 0.598m x 0.605m, which matches real-world expectations for an under-desk cabinet.",
-    "STATE CONFIGURATION: User guidance specified 'first drawer fully closed' and 'second drawer halfway open'. Joint 0 (first drawer) was set to 0.0m (fully closed). Joint 1 (second drawer) has a range of 0.0m to 1.0m, so 'halfway open' was set to 0.5m.",
-    "VISUAL MATERIAL REASONING: The overall object, including the furniture body and drawers, exhibits a dark grey, matte finish. This is visually consistent with painted particle board or MDF, commonly used in office furniture. The drawer handles appear to be metallic (silver-colored). Based on this, a density of 700 kg/m\u00b3 for particle board/MDF was chosen for the main structural components.",
-    "MASS CALCULATIONS:",
-    "  - link_2 (furniture_body): Estimated as a hollow box of scaled outer dimensions 0.600m W x 0.605m H x 0.598m D. Assuming an effective material volume of 0.1 m\u00b3 (accounting for internal hollow space and drawer openings). Mass = 0.1 m\u00b3 * 700 kg/m\u00b3 = 70 kg.",
-    "  - link_0 (drawer): Estimated as a drawer unit of scaled outer dimensions 0.600m W x 0.25m H x 0.5m D. Assuming an effective material volume of 0.012 m\u00b3 (accounting for thin panel construction). Mass = 0.012 m\u00b3 * 700 kg/m\u00b3 = 8.4 kg.",
-    "  - link_1 (drawer): Identical to link_0, so same mass of 8.4 kg.",
-    "USER GUIDANCE INTEGRATION:",
-    "  - 'low damping, sliding joints': For the prismatic joints (joint_0 and joint_1), 'low damping' was interpreted as a value of 5.0 (within the lower quartile of the 0.1-150 range). A low stiffness of 0.1 was applied to ensure the drawers stay where placed, and a friction of 0.2 was chosen for realistic sliding resistance.",
-    "  - 'first drawer fully closed, second drawer halfway open': These explicit instructions for initial joint positions were followed directly for joint_0 (0.0m) and joint_1 (0.5m).",
-    "FINAL SIZE: 0.599m \u00d7 0.600m \u00d7 0.605m (note: only 0 dim(s) \u2264 0.075m gripper - realistic size preserved)",
-    "STATE REFINEMENT: Collision-free in 1 iteration(s). Positions: {'joint_0': 0.01, 'joint_1': 0.5}"
+    "SIZE REASONING: A real-world 'very small 2-drawer, under desk office cabinet' is typically around 0.3m x 0.3m x 0.3m based on common office furniture products. Current mesh dimensions are approximately 1.2m x 1.2m x 1.2m. Applying a uniform scale of 0.25 gives final dimensions of approximately 0.3m x 0.3m x 0.3m, which matches real-world expectations for a 'very small' cabinet.",
+    "VISUAL MATERIAL REASONING: All visible parts (cabinet body and drawers) appear to be made of a dark, matte, solid furniture material, likely MDF or particle board with a laminate or paint finish. Handles appear metallic. A density of 700 kg/m\u00b3 for MDF/particle board was used for mass calculations, as it's a common material for such cabinets.",
+    "MASS CALCULATIONS: Total mass targeted around 12kg for a 'very small' cabinet. Link_2 (furniture_body) is the largest component, assigned 8kg. Link_0 and Link_1 (drawers) are smaller and lighter, assigned 2kg each. Inertia values are estimated based on approximate bounding box dimensions (0.3m cube for body, 0.3x0.3x0.1m for drawers) and the assigned masses.",
+    "USER GUIDANCE INTEGRATION: User guidance 'very small 2-drawer, under desk office cabinet' informed the scale factor. User guidance 'first drawer fully closed, second drawer slightly open' directly informed the 'initial_joint_positions' for joint_0 and joint_1. User guidance 'low damping, sliding joints' informed the damping and friction for the prismatic joints, using values in the lower range (5.0 damping, 0.2 friction) as specified.",
+    "JOINT DYNAMICS: For the prismatic (sliding) joints (joint_0 and joint_1), 'low damping' was set to 5.0 and 'friction' for sliding joints to 0.2. Stiffness was set to 0.1, as drawers typically do not spring back to a specific position.",
+    "FINAL SIZE: 0.299m \u00d7 0.300m \u00d7 0.302m (note: only 0 dim(s) \u2264 0.075m gripper - realistic size preserved)",
+    "STATE REFINEMENT: Collision-free in 1 iteration(s). Positions: {'joint_0': 0.01, 'joint_1': 0.2}"
   ],
   "initial_joint_positions_vlm_original": {
     "joint_0": 0.0,
-    "joint_1": 0.5,
-    "_reasoning": "User requested 'first drawer fully closed' (joint_0) which corresponds to position 0.0m. User requested 'second drawer halfway open' (joint_1), and its range is 0.0m to 1.0m, so halfway is 0.5m."
+    "joint_1": 0.2,
+    "_reasoning": "User requested 'first drawer fully closed' (joint_0) and 'second drawer slightly open' (joint_1). The images show both drawers at position 0.0m (closed). Joint_0 is set to 0.0m. Joint_1 is set to 0.2m, which is 20% of its 1.0m range, representing a 'slightly open' state for a drawer."
   },
   "_state_refinement_history": {
     "iteration_0": {

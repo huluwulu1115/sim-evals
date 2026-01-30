@@ -16,13 +16,17 @@ from objects import (
 TOOL_USE_PROMPT = "Close the trashcan lid."
 
 # Initial spawn rotation (quaternion: w, x, y, z)
-INITIAL_ROTATION = (1.0, 0.0, 0.0, 0.0)
+# -30 degrees around Z axis
+INITIAL_ROTATION = (0.9659, 0.0, 0.0, -0.2588)
 
-# Tool use: joint_0 is the lid hinge
-# Joint limits: lower=0.0 rad (closed), upper=0.57 rad (~33°, open)
-TOOL_USE_TARGET_JOINT = "joint_0"
-TOOL_USE_TARGET_POSITION = 0.05  # Target position when closed (radians)
+# Tool use: joint_1 is the lid hinge
+# Joint limits: lower=0.0 rad (closed), upper=3.15 rad (~180°, fully open)
+TOOL_USE_TARGET_JOINT = "joint_1"
+TOOL_USE_TARGET_POSITION = 0.0  # Target position when fully closed (radians)
 TOOL_USE_TOLERANCE = 0.1  # Position tolerance (radians)
+
+# Spawn position (x, y, z) - z=None means auto-compute from bounding box
+TOOL_USE_OBJECT_POS = (0.5, 0.0, None)
 
 
 # Shared task configs (trashcan only has tool_use, no grasping)
@@ -31,6 +35,7 @@ _TOOL_USE_CONFIG = ToolUseTaskConfig(
     target_joint=TOOL_USE_TARGET_JOINT,
     target_position=TOOL_USE_TARGET_POSITION,
     position_tolerance=TOOL_USE_TOLERANCE,
+    object_pos=TOOL_USE_OBJECT_POS,
 )
 
 

@@ -41,6 +41,7 @@ class ObjectTaskConfig:
     initial_rotation: tuple[float, float, float, float] = (1.0, 0.0, 0.0, 0.0)  # Quaternion (w, x, y, z)
     grasping: GraspingTaskConfig | None = None
     tool_use: ToolUseTaskConfig | None = None
+    disable_self_collision: bool = False  # Disable self-collision for objects with mesh interpenetration
 
 
 def check_grasping_success(

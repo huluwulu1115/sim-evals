@@ -441,6 +441,7 @@ def main(
             fix_base=fix_base,
             keep_bowl=keep_bowl,
             bowl_pos=bowl_pos,
+            disable_self_collision=object_config.disable_self_collision if object_config else None,
         )
     else:
         # Original USD scene mode

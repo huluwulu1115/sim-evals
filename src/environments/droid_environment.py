@@ -507,6 +507,7 @@ class SceneCfg(InteractiveSceneCfg):
         fix_base: bool = False,
         keep_bowl: bool = False,
         bowl_pos: tuple | None = None,
+        disable_self_collision: bool | None = None,
     ):
         """Load scene USD (with table/background) but replace cube/block/bowl with a URDF object.
         
@@ -518,6 +519,7 @@ class SceneCfg(InteractiveSceneCfg):
             fix_base: If True, fix the object's base in place (no physics on root)
             keep_bowl: If True, add a bowl to the scene
             bowl_pos: Bowl position (x, y, z). If None, uses default (0.5, 0.15, 0.0)
+            disable_self_collision: If True, disable self-collision. If None, read from overlay_refined.json.
         """
         # Load the scene USD (table, background, lighting are included)
         if self.scene_usd_path is not None:
@@ -622,7 +624,12 @@ class SceneCfg(InteractiveSceneCfg):
         urdf_dynamics = parse_urdf_joint_dynamics(str(urdf_path))
         
         # Check if self-collision needs to be disabled
-        disable_self_collision = parse_needs_disable_self_collision(object_folder, env_name="DROID-Eval")
+        # Priority: 1) explicit parameter (from config.py), 2) overlay_refined.json, 3) default False
+        disable_self_collision_source = "config.py" if disable_self_collision is not None else "overlay_refined.json"
+        if disable_self_collision is None:
+            disable_self_collision = parse_needs_disable_self_collision(object_folder, env_name="DROID-Eval")
+            if not disable_self_collision:
+                disable_self_collision_source = "default (False)"
         
         # Parse material properties from overlay (friction, restitution)
         # Store in module-level variable (not on self, which IsaacLab parses as asset config)
@@ -649,7 +656,7 @@ class SceneCfg(InteractiveSceneCfg):
         print(f"  Stiffness: {urdf_dynamics['stiffness'] or '(not specified - using simulator default)'}")
         print(f"  Damping: {urdf_dynamics['damping'] or '(not specified - using simulator default)'}")
         print(f"  Friction: {urdf_dynamics['friction'] or '(not specified - using simulator default)'}")
-        print(f"\nSelf-collision enabled: {not disable_self_collision}")
+        print(f"\nSelf-collision: {'DISABLED' if disable_self_collision else 'ENABLED'} (source: {disable_self_collision_source})")
         print(f"Fix base: {fix_base}")
         print(f"\nMaterial Properties (from overlay):")
         print(f"  Friction: {_OBJECT_MATERIAL_PROPS['friction']}")
@@ -997,6 +1004,7 @@ class EnvCfg(ManagerBasedRLEnvCfg):
         fix_base: bool = False,
         keep_bowl: bool = False,
         bowl_pos: tuple | None = None,
+        disable_self_collision: bool | None = None,
     ):
         """Configure scene with URDF object instead of cube/block/bowl.
         
@@ -1008,6 +1016,7 @@ class EnvCfg(ManagerBasedRLEnvCfg):
             fix_base: If True, fix the object's base in place (no physics on root)
             keep_bowl: If True, add a bowl to the scene
             bowl_pos: Bowl position (x, y, z). If None, uses default (0.5, 0.15, 0.0)
+            disable_self_collision: If True, disable self-collision. If None, read from overlay_refined.json.
         """
         self.scene.dynamic_scene_with_object(
             scene_name=scene_name,
@@ -1017,6 +1026,7 @@ class EnvCfg(ManagerBasedRLEnvCfg):
             fix_base=fix_base,
             keep_bowl=keep_bowl,
             bowl_pos=bowl_pos,
+            disable_self_collision=disable_self_collision,
         )
 
 

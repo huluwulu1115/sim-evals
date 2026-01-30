@@ -1,12 +1,25 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot name="partnet_1314c9a583812b9fc0eea8e38540939d">
     <!--
-  INITIAL JOINT POSITIONS (Set by VLM based on desired state)
+  INITIAL JOINT POSITIONS (For 'Close the drawer' task)
   ============================================================
   joint_0: 0.0
-  joint_1: 0.5
-  Reasoning: User requested 'first drawer fully closed' (joint_0) which corresponds to position 0.0m. User requested 'second drawer halfway open' (joint_1), and its range is 0.0m to 1.0m, so halfway is 0.5m.
+  joint_1: 0.2
+  Reasoning: User requested 'first drawer fully closed' (joint_0) and 'second drawer slightly open' (joint_1). The images show both drawers at position 0.0m (closed). Joint_0 is set to 0.0m. Joint_1 is set to 0.2m, which is 20% of its 1.0m range, representing a 'slightly open' state for a drawer.
   ============================================================
+  -->
+    <!--
+  Position/Orientation Stability.
+  For this test, \mathbf{q}_0 denotes the initial joint configuration used to instantiate the articulated asset at reset.
+  Starting from \mathbf{q}_0, we run the simulator for a settling period T_{set} to allow contacts and passive joints to reach a static equilibrium.
+  We then record the root pose of the object as a reference state (\mathbf{x}_{ref}, \mathbf{R}_{ref}), and continue simulating for an additional horizon T_{test} with no external actuation (zero actions).
+  Let (\mathbf{x}_t, \mathbf{R}_t) be the root position and orientation during this evaluation window.
+  We define the stability deviations as the maximum drift from the reference:
+    D_{pos}(\mathbf{q}_0) = max_{t in [0, T_{test}]} || \mathbf{x}_t - \mathbf{x}_{ref} ||_2,
+    D_{ori}(\mathbf{q}_0) = max_{t in [0, T_{test}]} d(\mathbf{R}_t, \mathbf{R}_{ref}),
+  where d(.,.) is the geodesic distance on SO(3).
+  Passing thresholds: D_{pos} <= 0.001 m and D_{ori} <= 0.01 rad.
+  Low values indicate that the asset remains numerically stable and does not exhibit spurious drift after initialization.
   -->
     <link name="base">
         <inertial>
@@ -19,31 +32,31 @@
         <visual name="drawer_front-28">
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_10.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_10.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </visual>
         <visual name="handle-27">
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_11.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_11.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </visual>
         <collision>
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_10.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_10.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </collision>
         <collision>
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_11.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_11.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </collision>
         <inertial>
-            <mass value="8.4" />
-            <inertia ixx="0.29575" iyy="0.21875" izz="0.427" ixy="0.0" ixz="0.0" iyz="0.0" />
-            <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0" />
+            <mass value="2.0" />
+            <inertia ixx="0.017" iyy="0.017" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
         </inertial>
     </link>
     <joint name="joint_0" type="prismatic">
@@ -51,50 +64,50 @@
         <axis xyz="0 0 1" />
         <child link="link_0" />
         <parent link="link_2" />
-        <limit lower="0" upper="1" />
-        <dynamics damping="0.5" friction="0.1" stiffness="0.0" />
+        <limit lower="-0.02" upper="0.25" />
+        <dynamics damping="5.0" friction="0.2" stiffness="0.1" />
     </joint>
     <link name="link_1">
         <visual name="drawer_front-25">
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_13.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_13.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </visual>
         <visual name="drawer_bottom-29">
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_2.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_2.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </visual>
         <visual name="handle-24">
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_14.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_14.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </visual>
         <collision>
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_13.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_13.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </collision>
         <collision>
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_2.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_2.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </collision>
         <collision>
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_14.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_14.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </collision>
         <inertial>
-            <mass value="8.4" />
-            <inertia ixx="0.29575" iyy="0.21875" izz="0.427" ixy="0.0" ixz="0.0" iyz="0.0" />
-            <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0" />
+            <mass value="2.0" />
+            <inertia ixx="0.017" iyy="0.017" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
         </inertial>
     </link>
     <joint name="joint_1" type="prismatic">
@@ -102,86 +115,86 @@
         <axis xyz="0 0 1" />
         <child link="link_1" />
         <parent link="link_2" />
-        <limit lower="0" upper="1" />
-        <dynamics damping="0.5" friction="0.1" stiffness="0.0" />
+        <limit lower="-0.02" upper="0.25" />
+        <dynamics damping="5.0" friction="0.2" stiffness="0.1" />
     </joint>
     <link name="link_2">
         <visual name="board-32">
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_1.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_1.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </visual>
         <visual name="board-32">
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_5.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_5.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </visual>
         <visual name="back_panel-19">
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_4.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_4.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </visual>
         <visual name="vertical_side_panel-20">
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_8.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_8.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </visual>
         <visual name="vertical_side_panel-21">
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_7.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_7.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </visual>
         <visual name="bottom_panel-22">
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_6.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_6.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </visual>
         <collision>
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_1.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_1.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </collision>
         <collision>
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_5.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_5.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </collision>
         <collision>
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_4.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_4.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </collision>
         <collision>
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_8.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_8.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </collision>
         <collision>
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_7.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_7.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </collision>
         <collision>
             <origin xyz="0.000000 0.000000 0.000000" />
             <geometry>
-                <mesh filename="textured_objs/original_6.obj" scale="0.500000 0.500000 0.500000" />
+                <mesh filename="textured_objs/original_6.obj" scale="0.250000 0.250000 0.250000" />
             </geometry>
         </collision>
         <inertial>
-            <mass value="70.0" />
-            <inertia ixx="4.2" iyy="4.2" izz="4.2" ixy="0.0" ixz="0.0" iyz="0.0" />
-            <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0" />
+            <mass value="8.0" />
+            <inertia ixx="0.12" iyy="0.12" izz="0.12" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
         </inertial>
     </link>
     <joint name="joint_2" type="fixed">

@@ -19,11 +19,14 @@ TOOL_USE_PROMPT = "Close the drawer of the cabinet."
 # -90 degrees around Z axis to orient cabinet correctly
 INITIAL_ROTATION = (0.7071, 0.0, 0.0, -0.7071)
 
-# Tool use: joint_0 is the drawer (prismatic)
-# Joint limits: lower=0.0 m (closed), upper=1.0 m (open)
-TOOL_USE_TARGET_JOINT = "joint_0"
+# Tool use: joint_1 is the TOP drawer (prismatic)
+# Joint limits: lower=0.0 m (closed), upper=0.25 m (open) after scaling
+TOOL_USE_TARGET_JOINT = "joint_1"
 TOOL_USE_TARGET_POSITION = 0.0  # Target position when fully closed (meters)
-TOOL_USE_TOLERANCE = 0.1  # Position tolerance (meters)
+TOOL_USE_TOLERANCE = 0.05  # Position tolerance (meters)
+
+# Spawn position (x, y, z) - z=None means auto-compute from bounding box
+TOOL_USE_OBJECT_POS = (0.5, -0.40, None)  # Moved to negative y direction
 
 
 # Shared task configs (cabinet only has tool_use, no grasping)
@@ -32,6 +35,7 @@ _TOOL_USE_CONFIG = ToolUseTaskConfig(
     target_joint=TOOL_USE_TARGET_JOINT,
     target_position=TOOL_USE_TARGET_POSITION,
     position_tolerance=TOOL_USE_TOLERANCE,
+    object_pos=TOOL_USE_OBJECT_POS,
 )
 
 

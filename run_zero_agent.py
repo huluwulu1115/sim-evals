@@ -47,30 +47,30 @@ def _torch_cuda_arch_preflight() -> None:
         raise RuntimeError(str(e)) from e
 
 
-def _load_grasping_task_config(object_path: str):
-    """Load grasping task config from objects/<category>/config.py.
+def _load_task_config(object_path: str):
+    """Load task config from objects/<category>/config.py.
 
     Returns:
-        (object_config, grasping_config) or (None, None) on failure.
+        (object_config, grasping_config, tool_use_config) or (None, None, None) on failure.
     """
     import importlib
 
     parts = object_path.split("/")
     if len(parts) != 2:
         print(f"[CONFIG] Object path must be category/variant format: {object_path}")
-        return None, None
+        return None, None, None
 
     category, variant = parts
     try:
         config_module = importlib.import_module(f"objects.{category}.config")
         object_config = config_module.get_config(variant)
-        return object_config, object_config.grasping
+        return object_config, object_config.grasping, object_config.tool_use
     except ImportError as e:
         print(f"[CONFIG] Could not import config for {category}: {e}")
-        return None, None
+        return None, None, None
     except ValueError as e:
         print(f"[CONFIG] {e}")
-        return None, None
+        return None, None, None
 
 
 def print_object_properties(env):
@@ -188,7 +188,7 @@ def main(
 
     # If an object is provided and CLI didn't override, pull defaults from objects/<category>/config.py
     if object is not None:
-        object_config, grasping_config = _load_grasping_task_config(object)
+        object_config, grasping_config, tool_use_config = _load_task_config(object)
 
         # Rotation
         if object_config is not None and object_rot == (1.0, 0.0, 0.0, 0.0):
@@ -199,7 +199,7 @@ def main(
         if grasping_config is not None:
             if object_pos is None and getattr(grasping_config, "object_pos", None) is not None:
                 object_pos = grasping_config.object_pos
-                print(f"[CONFIG] Using object_pos from config: {object_pos}")
+                print(f"[CONFIG] Using object_pos from grasping config: {object_pos}")
             # Use keep_bowl from config if not already set via CLI
             if not keep_bowl and getattr(grasping_config, "keep_bowl", False):
                 keep_bowl = True
@@ -207,6 +207,17 @@ def main(
             if keep_bowl and bowl_pos is None and getattr(grasping_config, "bowl_pos", None) is not None:
                 bowl_pos = grasping_config.bowl_pos
                 print(f"[CONFIG] Using bowl_pos from config: {bowl_pos}")
+
+        # Fallback to tool_use config for object_pos if grasping didn't set it
+        if tool_use_config is not None and object_pos is None:
+            if getattr(tool_use_config, "object_pos", None) is not None:
+                cfg_pos = tool_use_config.object_pos
+                # Handle z=None case (auto-compute from bounding box)
+                if cfg_pos[2] is None:
+                    object_pos = (cfg_pos[0], cfg_pos[1], None)
+                else:
+                    object_pos = cfg_pos
+                print(f"[CONFIG] Using object_pos from tool_use config: {object_pos}")
 
     print(f"\n{'='*70}")
     print("ZERO AGENT - SIM-EVALS DROID ENVIRONMENT")
@@ -240,6 +251,7 @@ def main(
             fix_base=fix_base,
             keep_bowl=keep_bowl,
             bowl_pos=bowl_pos,
+            disable_self_collision=object_config.disable_self_collision if object_config else None,
         )
     else:
         env_cfg.set_scene(scene)

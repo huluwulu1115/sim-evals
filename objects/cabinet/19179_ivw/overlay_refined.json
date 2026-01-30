@@ -1,6 +1,6 @@
 {
   "global_modifications": {
-    "uniform_scale_factor": 0.5310391752577319,
+    "uniform_scale_factor": 0.42013698630137,
     "material_properties": {
       "friction": 0.5,
       "restitution": 0.1,
@@ -11,11 +11,11 @@
   "link_modifications": {
     "link_0": {
       "_action": "new",
-      "mass": 3.962338291248703,
+      "mass": 2.2570329670329667,
       "inertia": {
-        "ixx": 0.07513083635324354,
-        "iyy": 0.13340646829989847,
-        "izz": 0.10925068886052776,
+        "ixx": 0.02795127233178876,
+        "iyy": 0.0476305270209871,
+        "izz": 0.03269650759266377,
         "ixy": 0.0,
         "ixz": 0.0,
         "iyz": 0.0
@@ -23,11 +23,11 @@
     },
     "link_1": {
       "_action": "new",
-      "mass": 4.056256983240224,
+      "mass": 2.271868131868132,
       "inertia": {
-        "ixx": 0.10343287453207012,
-        "iyy": 0.16841204737324256,
-        "izz": 0.13583251313539477,
+        "ixx": 0.02821036909742336,
+        "iyy": 0.04805383208539652,
+        "izz": 0.03297105221823093,
         "ixy": 0.0,
         "ixz": 0.0,
         "iyz": 0.0
@@ -35,11 +35,11 @@
     },
     "link_2": {
       "_action": "new",
-      "mass": 23.40531608763222,
+      "mass": 11.598034206017614,
       "inertia": {
-        "ixx": 1.1844472937034642,
-        "iyy": 1.1866401616411735,
-        "izz": 1.1765233487458457,
+        "ixx": 0.4499202110817942,
+        "iyy": 0.4508059713928621,
+        "izz": 0.44807117900291626,
         "ixy": 0.0,
         "ixz": 0.0,
         "iyz": 0.0
@@ -49,22 +49,22 @@
   "joint_modifications": {
     "joint_0": {
       "_action": "new",
-      "damping": 0.02179236043095005,
-      "friction": 0.9511165426063771,
+      "damping": 0.059904026800063376,
+      "friction": 0.21106717397444627,
       "stiffness": 0.0,
       "limit_modifications": {
         "lower": 0.0,
-        "upper": 0.9999999999999917
+        "upper": 0.2770825426944971
       }
     },
     "joint_1": {
       "_action": "new",
-      "damping": 0.02179236043095005,
-      "friction": 0.9511165426063771,
+      "damping": 0.059904026800063376,
+      "friction": 0.21106717397444627,
       "stiffness": 0.0,
       "limit_modifications": {
         "lower": 0.0,
-        "upper": 0.9999999999999917
+        "upper": 0.2770825426944971
       }
     },
     "joint_2": {
@@ -80,15 +80,15 @@
   },
   "validation_notes": [
     "Object type: phys2realivw",
-    "User guidance provided: I want a 2-drawer, under desk office cabinet, with first drawer fully closed, second drawer halfway open and low damping, sliding joints.",
+    "User guidance provided: I want a very small 2-drawer, under desk office cabinet, with first drawer fully closed, second drawer slightly open and low damping, sliding joints.",
     "Method: Phys2Real Inverse-Variance Weighted Aggregation (25/25 successful queries)",
-    "Total mass estimate: 31.909 kg (\u03c3=0.148)",
-    "Scale factor: 0.5310 (\u03c3=0.0102)"
+    "Total mass estimate: 15.422 kg (\u03c3=0.594)",
+    "Scale factor: 0.4201 (\u03c3=0.0117)"
   ],
   "initial_joint_positions": {
     "joint_0": 0.0,
-    "joint_1": 0.17742141157811261,
+    "joint_1": 0.0707901500704751,
     "joint_2": 0.0,
-    "_reasoning": "The first drawer (joint_0) is set to 0.0 (fully closed) as requested. The second drawer (joint_1) is set to 0.122, which is half of its estimated maximum extension (0.244 meters), as requested. The base joint (joint_2) is fixed, so its initial position is 0.0."
+    "_reasoning": "Joint_0 (first drawer) is set to 0.0 (fully closed) as requested. Joint_1 (second drawer) is set to 0.05m to represent a 'slightly open' state, which is approximately 9% of its maximum travel. Joint_2 is a fixed joint connecting the base to the world, so its position is 0.0."
   }
 }
