@@ -74,6 +74,19 @@ def main(
 
     obs, _ = env.reset()
     obs, _ = env.reset() # need second render cycle to get correctly loaded materials
+
+    # Debug: print resolved gripper actuator stiffness/damping from USD
+    robot = env.unwrapped.scene["robot"]
+    print("\n===== Actuator Parameters (resolved from USD where None) =====")
+    for name, actuator in robot.actuators.items():
+        print(f"\n[{name}]")
+        print(f"  joint_names: {actuator.joint_names}")
+        print(f"  stiffness:   {actuator.stiffness}")
+        print(f"  damping:     {actuator.damping}")
+        print(f"  effort_limit_sim: {getattr(actuator, 'effort_limit_sim', 'N/A')}")
+        print(f"  velocity_limit_sim: {getattr(actuator, 'velocity_limit_sim', 'N/A')}")
+    print("=" * 60 + "\n")
+
     client = DroidJointPosClient()
 
 
